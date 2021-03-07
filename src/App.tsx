@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import NavComponent from "./shared/components/nav";
 import HomeComponent from "./components/home";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -9,9 +9,8 @@ import GalleryComponent from "./components/gallery";
 function App() {
   return (
     <div className="App">
-      <NavComponent />
-
       <BrowserRouter>
+        <NavComponent />
         <div className="app">
           <Switch>
             <Route path="/" exact component={HomeComponent} />

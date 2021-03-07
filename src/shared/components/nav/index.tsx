@@ -1,10 +1,15 @@
+import { faImages, faMap } from "@fortawesome/free-regular-svg-icons";
+import { faBook, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../constants/constants";
 
 import "./nav.scss";
 
 interface navBarLink {
   path: string;
+  icon?: IconDefinition;
   zh: string;
   en?: string;
 }
@@ -13,25 +18,33 @@ const NavComponent = () => {
     {
       path: ROUTES.WIKI,
       zh: "百科",
+      icon: faBook,
     },
     {
       path: ROUTES.DYNMAP,
       zh: "卫星地图",
+      icon: faMap,
     },
 
     {
       path: ROUTES.GALLERY,
       zh: "相册",
+      icon: faImages,
     },
   ];
   return (
     <div className="nav-component">
-      梦の世界
+      <NavLink className="title" to="/">
+        梦の世界
+      </NavLink>
       {navBarLinks.map((link, index) => {
         return (
-          <a key={`navlink${index}`} className="nav-link" href={link.path}>
+          <NavLink key={`navlink${index}`} className="nav-link" to={link.path}>
+            {link.icon && (
+              <FontAwesomeIcon className="nav-icon" icon={link.icon} />
+            )}
             {link.zh}
-          </a>
+          </NavLink>
         );
       })}
     </div>

@@ -1,6 +1,34 @@
+@use '../../constants/constants.scss';
 .nav-component {
   display: flex;
+  padding: 0 constants.$page-horizontal-padding;
+  box-shadow: 0 1px 3px lightgray;
+  align-items: center;
+
+  .title {
+    margin-right: 2ch;
+    font-size: 1.2rem;
+    padding: 1ch;
+    text-decoration: none;
+    color: black;
+  }
+  .title:is(:hover, :focus) {
+    color: blue;
+    outline-width: 0;
+  }
+
   .nav-link {
     text-decoration: none;
+    color: black;
+    padding: 2ch 2ch;
+  }
+
+  .nav-link:is(:hover, :focus) {
+    background-color: lightgray;
+    outline-width: 0;
+  }
+
+  .nav-icon {
+    margin-right: 1ch;
   }
 }
