@@ -1,0 +1,9 @@
+.dynmap-container {
+  width: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  height: 1000px;
+  .dynmap-iframe {
+    width: 100%;
+  }
+}

@@ -1,3 +1,5 @@
+@use './shared/constants/constants.scss';
+
 // override scroll bar
 /* width */
 ::-webkit-scrollbar {
@@ -24,3 +26,17 @@
 //     height: 0px;
 //   }
 // }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: hidden;
+}
+.app {
+  overflow-y: scroll;
+}
+// most pages should have similar style
+.page {
+  padding: 0 constants.$page-horizontal-padding;
+}
