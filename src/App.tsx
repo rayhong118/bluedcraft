@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import NavComponent from "./shared/components/nav";
+import HomeComponent from "./components/home";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import WikiComponent from "./components/wiki";
+import { ROUTES } from "./shared/constants/constants";
+import DynmapComponent from "./components/dynmap";
+import GalleryComponent from "./components/gallery";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavComponent />
+
+      <BrowserRouter>
+        <div className="app">
+          <Switch>
+            <Route path="/" exact component={HomeComponent} />
+            <Route path={ROUTES.WIKI} exact component={WikiComponent} />
+            <Route path={ROUTES.DYNMAP} exact component={DynmapComponent} />
+            <Route path={ROUTES.GALLERY} exact component={GalleryComponent} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
