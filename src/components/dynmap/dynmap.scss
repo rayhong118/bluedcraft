@@ -1,9 +1,17 @@
+.dynmap-page {
+  position: absolute;
+  top: 5%;
+  bottom: 0;
+  width: 100%;
+}
+
 .dynmap-container {
   width: 100%;
   display: flex;
   flex: 1 1 auto;
-  height: 1000px;
+  height: 100%;
   .dynmap-iframe {
+    border: none;
     width: 100%;
   }
 }
