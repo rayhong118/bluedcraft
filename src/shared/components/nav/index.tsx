@@ -25,7 +25,6 @@ const NavComponent = () => {
       zh: "卫星地图",
       icon: faMap,
     },
-
     {
       path: ROUTES.GALLERY,
       zh: "相册",
@@ -34,7 +33,8 @@ const NavComponent = () => {
   ];
   return (
     <div className="nav-component">
-      <NavLink className="title" to="/">
+      <NavLink className="nav-link" to="/">
+        <img src="/favicon.ico" />
         梦の世界
       </NavLink>
       {navBarLinks.map((link, index) => {

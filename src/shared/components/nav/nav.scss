@@ -4,28 +4,27 @@
   padding: 0 constants.$page-horizontal-padding;
   box-shadow: 0 1px 3px lightgray;
   align-items: center;
-
-  .title {
-    margin-right: 2ch;
-    font-size: 1.2rem;
-    padding: 1ch 0;
-    text-decoration: none;
-    color: black;
-  }
-  .title:is(:hover, :focus) {
-    color: blue;
-    outline-width: 0;
-  }
+  height: 4rem;
 
   .nav-link {
+    height: 100%;
     text-decoration: none;
     color: black;
-    padding: 2ch 2ch;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+
+    img {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.5rem;
+    }
   }
 
   .nav-link:is(:hover, :focus) {
     background-color: lightgray;
     outline-width: 0;
+    transition: 0.5s;
   }
 
   .nav-icon {
