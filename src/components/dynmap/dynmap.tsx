@@ -2,7 +2,7 @@ import React from "react";
 import "./dynmap.scss";
 export const Dynmap = () => {
   return (
-    <div className="page">
+    <div>
       Dynmap
       <div className="dynmap-container">
         <iframe

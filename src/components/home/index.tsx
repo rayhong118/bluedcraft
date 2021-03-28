@@ -1,12 +1,9 @@
 import React from "react";
 import { Home } from "./home";
+import "./home.scss";
 
 const HomeComponent = () => {
-  return (
-    <div>
-      <Home />
-    </div>
-  );
+  return <Home />;
 };
 
 export default HomeComponent;
