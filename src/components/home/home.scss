@@ -18,30 +18,31 @@
     .background {
       position: relative;
       width: 100%;
-      top: 0;
+      top: 2rem;
       left: 0;
-      transform: translateZ(0.5px) scale(0.9);
+      transform: translateZ(1px);
     }
+
     .foreground {
-      margin-top: auto;
       transform-origin: 0;
       //transform: translateZ(0px);
+      margin: -5rem 0 -10rem 0;
 
       z-index: 1;
 
       &-content {
-        padding: 5rem;
-        background-color: white;
+        padding: 15rem;
+        background-color: gray;
       }
     }
     #pageTitle {
       color: white;
       text-shadow: 1px 1px 2px black;
       width: 100%;
-      margin-top: -200px;
+      margin-top: -30rem;
       padding: 0 constants.$page-horizontal-padding;
-      margin-bottom: 2rem;
-
+      margin-bottom: 4rem;
+      font-size: 2rem;
       h1 {
         margin-bottom: 0;
       }
