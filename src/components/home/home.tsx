@@ -5,7 +5,7 @@ export const Home = () => {
   return (
     <div id="homePage">
       <div className="parallax-container">
-        <img className="background" src="/imageAssets/bg-main-1.png" />
+        <img className="background" src="/imageAssets/bg-main-1.jpg" />
         <div className="foreground" id="pageTitle">
           <h1>梦の世界</h1>
           <h2>认真|负责|友爱|公益</h2>
@@ -28,7 +28,7 @@ export const Home = () => {
             新手请看这里新手请看这里新手请看这里新手请看这里
           </div>
         </div>
-        <img className="background" src="/imageAssets/bg-main-2.png" />
+        <img className="background" src="/imageAssets/bg-main-2.jpg" />
 
         <div className="foreground">
           <div className="foreground-content">
