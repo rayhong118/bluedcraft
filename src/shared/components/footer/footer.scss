@@ -1,12 +1,11 @@
 @use '../../constants/constants.scss';
 
 footer {
-    background-color: black;
-    color: white;
-}
-
-.container {
+  background-color: black;
+  color: white;
+  .container {
     padding: 0 1rem;
     margin-right: auto;
     margin-left: auto;
+  }
 }
