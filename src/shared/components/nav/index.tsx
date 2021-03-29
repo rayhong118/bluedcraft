@@ -1,4 +1,4 @@
-import { faImages, faMap } from "@fortawesome/free-regular-svg-icons";
+import { faImages, faMap, faFutbol } from "@fortawesome/free-regular-svg-icons";
 import { faBook, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
@@ -30,11 +30,16 @@ const NavComponent = () => {
       zh: "相册",
       icon: faImages,
     },
+    {
+      path: ROUTES.GALLERY,
+      zh: "活动",
+      icon: faFutbol,
+    }
   ];
   return (
     <div className="nav-component">
       <NavLink className="nav-link" to="/">
-        <span><img src="/imageAssets/logo.png" alt="logo"/></span>
+        <span><img src="/imageAssets/logo.png" alt="logo" /></span>
       </NavLink>
       {navBarLinks.map((link, index) => {
         return (
