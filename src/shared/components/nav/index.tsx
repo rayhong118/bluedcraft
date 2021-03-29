@@ -34,8 +34,7 @@ const NavComponent = () => {
   return (
     <div className="nav-component">
       <NavLink className="nav-link" to="/">
-        <img src="/favicon.ico" />
-        梦の世界
+        <span><img src="/imageAssets/logo.png" alt="logo"/></span>
       </NavLink>
       {navBarLinks.map((link, index) => {
         return (
