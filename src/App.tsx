@@ -6,6 +6,7 @@ import WikiComponent from "./components/wiki";
 import { ROUTES } from "./shared/constants/constants";
 import DynmapComponent from "./components/dynmap";
 import GalleryComponent from "./components/gallery";
+import FooterComponent from "./shared/components/footer";
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
             <Route path={ROUTES.GALLERY} exact component={GalleryComponent} />
           </Switch>
         </div>
+        <FooterComponent />
       </BrowserRouter>
     </div>
   );
