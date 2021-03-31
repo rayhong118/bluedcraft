@@ -34,12 +34,12 @@ const NavComponent = () => {
       path: ROUTES.GALLERY,
       zh: "活动",
       icon: faFutbol,
-    }
+    },
   ];
   return (
     <div className="nav-component">
       <NavLink className="nav-link" to="/">
-        <span><img src="/imageAssets/logo.png" alt="logo" /></span>
+        <img src="/imageAssets/logo.png" alt="logo" />
       </NavLink>
       {navBarLinks.map((link, index) => {
         return (
