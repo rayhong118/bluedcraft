@@ -19,7 +19,7 @@ function App() {
             <Route path={ROUTES.DYNMAP} exact component={DynmapComponent} />
             <Route path={ROUTES.GALLERY} exact component={GalleryComponent} />
           </Switch>
-          <FooterComponent />
+          {/* <FooterComponent /> */}
         </div>
       </BrowserRouter>
     </div>
