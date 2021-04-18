@@ -10,7 +10,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
 
-    perspective: 5px;
+    perspective: 10px;
     perspective-origin: 50% 50%;
     display: flex;
     flex-direction: column;
@@ -27,11 +27,13 @@
     .foreground {
       transform-origin: 50%;
       //transform: translateZ(0px);
-      margin: 0 0 -20vh 0;
+      margin: 0 0 -10vh 0;
       z-index: 1;
       &-content {
-        padding: 15rem;
-        background-color: gray;
+        padding: 5%;
+        line-height: clamp(1.5rem, 4vw, 4rem);
+        background-color: whitesmoke;
+        font-size: clamp(1rem, 2vw, 2rem);
       }
     }
     #pageTitle {
