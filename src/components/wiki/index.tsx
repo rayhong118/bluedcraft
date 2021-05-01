@@ -1,4 +1,3 @@
-import React from "react";
 import { Wiki } from "./wiki";
 import { WikiEdit } from "./wiki-edit";
 
