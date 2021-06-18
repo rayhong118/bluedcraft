@@ -43,7 +43,12 @@ const NavComponent = () => {
       </NavLink>
       {navBarLinks.map((link, index) => {
         return (
-          <NavLink key={`navlink${index}`} className="nav-link" to={link.path}>
+          <NavLink
+            key={`navlink${index}`}
+            className="nav-link"
+            activeClassName="nav-link-active"
+            to={link.path}
+          >
             {link.icon && (
               <FontAwesomeIcon className="nav-icon" icon={link.icon} />
             )}
