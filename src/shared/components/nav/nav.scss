@@ -1,41 +1,49 @@
 @use '../../constants/constants.scss';
+
+// mobile view
 .nav-component {
-  display: flex;
-  padding: 0 constants.$page-horizontal-padding;
-  box-shadow: 0 1px 3px lightgray;
-  align-items: center;
-  height: 4rem;
-  z-index: 1000;
-  background-color: white;
+  display: none;
+}
 
-  .nav-link {
-    height: 50%;
-    text-decoration: none;
-    color: black;
+@media (min-width: 1200px) {
+  .nav-component {
     display: flex;
+    padding: 0 constants.$page-horizontal-padding;
+    box-shadow: 0 1px 3px lightgray;
     align-items: center;
-    padding: 0 1rem;
+    height: 4rem;
+    z-index: 1000;
+    background-color: white;
 
-    transition: 0.5s;
-    transition-timing-function: linear;
+    .nav-link {
+      height: 50%;
+      text-decoration: none;
+      color: black;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
 
-    img {
-      height: 1rem;
+      transition: 0.5s;
+      transition-timing-function: linear;
+
+      img {
+        height: 1rem;
+      }
     }
-  }
 
-  .nav-link:is(:hover) {
-    box-shadow: 0 -3px inset constants.$secondary-color;
-    transition: 0.5s;
-    transition-timing-function: linear;
-  }
-  .nav-link-active {
-    box-shadow: 0 -3px inset constants.$theme-color;
-    transition: 0.5s;
-    transition-timing-function: linear;
-  }
+    .nav-link:is(:hover) {
+      box-shadow: 0 -3px inset constants.$secondary-color;
+      transition: 0.5s;
+      transition-timing-function: linear;
+    }
+    .nav-link-active {
+      box-shadow: 0 -3px inset constants.$theme-color;
+      transition: 0.5s;
+      transition-timing-function: linear;
+    }
 
-  .nav-icon {
-    margin-right: 1ch;
+    .nav-icon {
+      margin-right: 1ch;
+    }
   }
 }
