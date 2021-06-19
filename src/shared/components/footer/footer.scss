@@ -1,11 +1,17 @@
 @use '../../constants/constants.scss';
 
 footer {
-  background-color: black;
-  color: white;
-  .container {
-    padding: 0 1rem;
-    margin-right: auto;
-    margin-left: auto;
+  display: none;
+}
+@media (min-width: constants.$mobile-desktop-breakpoint) {
+  footer {
+    display: block;
+    background-color: constants.$dark-gray;
+    color: white;
+    .container {
+      padding: 1rem constants.$desktop-margin;
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, Segment } from "semantic-ui-react";
+import FooterComponent from "../../shared/components/footer";
 export const Home = () => {
   // use local storage to check if need to display newbie guide
   // user can manually dismiss the guide
@@ -34,6 +35,18 @@ export const Home = () => {
         我们拥有严格的管理制度，为有素质的玩家们提供良好的游戏环境，从未出现，也永远不会出现滥用权限的管理！
         我们能向你保证服务器素质以及零熊孩子！
       </h3>
+
+      <div id="featureListTitle">
+        <h1>服务器特色</h1>
+      </div>
+
+      <div className="list-of-feature">
+        <div className="feature">原版生存</div>
+        <div className="feature">高水平建筑团队</div>
+        <div className="feature">小游戏</div>
+      </div>
+
+      <FooterComponent />
     </div>
   );
 };
