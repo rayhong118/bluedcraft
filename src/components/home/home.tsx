@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, Segment } from "semantic-ui-react";
 import FooterComponent from "../../shared/components/footer";
 export const Home = () => {
   // use local storage to check if need to display newbie guide
   // user can manually dismiss the guide
-  const bannerImgUrl = "/imageAssets/bg-main-3.jpg";
+  //const bannerImgUrl = "/imageAssets/bg-main-3.jpg";
 
   const listOfNavBox = [{ title: "", description: "", bgImgUrl: "" }];
   const listOfBannerImg = [{ url: "", description: "" }];
+
+  const [bannerImgUrl, setBannerImgUrl] = useState<string>(
+    "/imageAssets/bg-main-3.jpg"
+  );
+  useEffect(() => {
+    const dateNow = new Date();
+    const hourNow = dateNow.getHours();
+    console.log(hourNow);
+  }, []);
 
   return (
     <div id="homePage" className="page">
