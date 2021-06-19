@@ -41,12 +41,13 @@
   }
 }
 
+// desktop version
 @media (min-width: constants.$mobile-desktop-breakpoint) {
   .nav-component {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    padding: 0 constants.$page-horizontal-padding;
+    padding: 0 constants.$desktop-margin;
     box-shadow: 0 1px 3px lightgray;
     align-items: center;
     height: 4rem;
@@ -78,7 +79,8 @@
 
     .nav-link:is(:hover, :focus) {
       outline: 0;
-      box-shadow: 0 -3px inset constants.$secondary-color;
+      box-shadow: 0 -3px inset constants.$light-gray;
+      background-color: transparent;
       transition: 0.5s;
       transition-timing-function: linear;
     }

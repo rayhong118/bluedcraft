@@ -1,55 +1,102 @@
 @use '../../shared/constants/constants.scss';
+
 #homePage {
-  overflow-y: hidden;
   height: 100%;
 
-  .parallax-container {
+  .banner {
     position: relative;
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    width: 100vw;
+    height: 50vw;
 
-    perspective: 10px;
-    perspective-origin: 50% 50%;
-    display: flex;
-    flex-direction: column;
-
-    .background {
-      position: relative;
-      width: 100%;
-      min-width: 960px;
-      top: 2rem;
-      left: 0;
-      transform: translateZ(1px);
+    img {
+      width: 100vw;
+      height: 50vw;
+      object-fit: cover;
     }
 
-    .foreground {
-      transform-origin: 50%;
-      //transform: translateZ(0px);
-      margin: 0 0 -10vh 0;
-      z-index: 1;
-      &-content {
-        padding: 5%;
-        line-height: clamp(1.5rem, 4vw, 4rem);
-        background-color: whitesmoke;
-        font-size: clamp(1rem, 2vw, 2rem);
-      }
-    }
     #pageTitle {
+      position: absolute;
+      top: 0%;
+      left: 2rem;
+      height: 50vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       color: white;
       text-shadow: 1px 1px 2px black;
-      width: 100%;
-      margin-top: -60vh;
-      padding: 0 constants.$page-horizontal-padding;
-      margin-bottom: 5vh;
-      font-size: 2rem;
       h1 {
-        margin-bottom: 0;
+        font-size: 2.5rem;
       }
       h2 {
         margin-top: 0;
+        margin-bottom: 1rem;
       }
+    }
+  }
+
+  .list-of-nav {
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    grid-auto-rows: minmax(200px, auto);
+    .nav-box {
+      border: 1px solid constants.$light-gray;
+    }
+  }
+}
+
+@media (min-width: constants.$mobile-desktop-breakpoint) {
+  #homePage {
+    height: 100%;
+    $banner-height: 30vw;
+
+    .banner {
+      position: relative;
+      width: 100vw;
+      height: $banner-height;
+
+      img {
+        width: 100vw;
+        height: $banner-height;
+        object-fit: cover;
+      }
+
+      #pageTitle {
+        position: absolute;
+        top: 0%;
+        left: constants.$desktop-margin;
+        height: $banner-height;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+        h1 {
+          font-size: 2.5rem;
+        }
+        h2 {
+          margin-top: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .list-of-nav {
+      margin: 5rem constants.$desktop-margin;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      grid-auto-rows: minmax(300px, auto);
+      .nav-box {
+        border: 1px solid constants.$light-gray;
+      }
+    }
+
+    .paragraph {
+      padding: constants.$desktop-margin;
+      //color: constants.$theme-shade-2;
+      background-color: constants.$light-gray;
     }
   }
 }

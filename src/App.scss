@@ -37,11 +37,12 @@
   overflow: hidden;
   height: 100%;
 }
-// most pages should have similar style
-// .page {
-//   height: 100%;
-//   overflow: hidden;
-// }
+//most pages should have similar style
+.page {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 #topNav {
   display: none;
 }
