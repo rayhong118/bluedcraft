@@ -47,7 +47,8 @@
     display: flex;
     flex-direction: row;
     justify-content: start;
-    padding: 0 constants.$desktop-margin;
+    padding: 0 max(calc(calc(100% - 1920px) / 2), #{constants.$desktop-margin});
+    //   padding: 0 constants.$desktop-margin;
     box-shadow: 0 1px 3px lightgray;
     align-items: center;
     height: 4rem;

@@ -55,6 +55,8 @@ export const Home = () => {
         <div className="feature">小游戏</div>
       </div>
 
+      <div>ou</div>
+
       <FooterComponent />
     </div>
   );

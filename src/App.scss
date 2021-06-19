@@ -27,31 +27,34 @@
 //   }
 // }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow-y: hidden;
-}
-.app {
-  overflow: hidden;
-  height: 100%;
-}
 //most pages should have similar style
 .page {
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  max-width: 1920px;
+  margin: auto;
 }
+
 #topNav {
   display: none;
 }
 @media (min-width: constants.$mobile-desktop-breakpoint) {
   #topNav {
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    top: 0;
     display: block;
   }
 }
-
+#bottomNav {
+  z-index: 10;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: block;
+  background-color: white;
+}
 @media (min-width: constants.$mobile-desktop-breakpoint) {
   #bottomNav {
     display: none;
