@@ -32,6 +32,10 @@
         margin-bottom: 1rem;
       }
     }
+
+    #bannerImgDesc {
+      display: none;
+    }
   }
 
   .list-of-nav {
@@ -99,6 +103,16 @@
           margin-top: 0;
           margin-bottom: 1rem;
         }
+      }
+
+      #bannerImgDesc {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: constants.$desktop-margin;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+        margin-bottom: 1rem;
       }
     }
 

@@ -27,6 +27,9 @@ export const Home = () => {
           <h1>梦の世界</h1>
           <h2>认真|负责|友爱|公益</h2>
         </div>
+        <div id="bannerImgDesc">
+          <h3>平川——现代城市</h3>
+        </div>
       </div>
 
       <div className="list-of-nav">
@@ -54,8 +57,6 @@ export const Home = () => {
         <div className="feature">高水平建筑团队</div>
         <div className="feature">小游戏</div>
       </div>
-
-      <div>ou</div>
 
       <FooterComponent />
     </div>
