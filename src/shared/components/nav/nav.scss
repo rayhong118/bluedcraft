@@ -2,12 +2,49 @@
 
 // mobile view
 .nav-component {
-  display: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  #bluedcraft {
+    display: none;
+  }
+  .nav-link {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0.5rem 0;
+
+    transition: 0.5s;
+    transition-timing-function: linear;
+
+    img {
+      height: 1rem;
+    }
+  }
+
+  .nav-link:is(:hover, :focus) {
+    outline: 0;
+    background-color: lightgray;
+    transition: 0.5s;
+    transition-timing-function: linear;
+  }
+  .nav-link-active {
+    color: constants.$theme-color;
+    transition: 0.5s;
+    transition-timing-function: linear;
+  }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: constants.$mobile-desktop-breakpoint) {
   .nav-component {
     display: flex;
+    flex-direction: row;
     padding: 0 constants.$page-horizontal-padding;
     box-shadow: 0 1px 3px lightgray;
     align-items: center;
@@ -15,14 +52,20 @@
     z-index: 1000;
     background-color: white;
 
+    #bluedcraft {
+      display: block;
+      margin-right: 1rem;
+    }
+
     .nav-link {
       height: 50%;
       text-decoration: none;
       color: black;
       display: flex;
+      flex-direction: row;
       align-items: center;
-      padding: 0 1rem;
-
+      padding: 0 0.5rem;
+      margin: 0 0.5rem;
       transition: 0.5s;
       transition-timing-function: linear;
 
@@ -31,7 +74,8 @@
       }
     }
 
-    .nav-link:is(:hover) {
+    .nav-link:is(:hover, :focus) {
+      outline: 0;
       box-shadow: 0 -3px inset constants.$secondary-color;
       transition: 0.5s;
       transition-timing-function: linear;

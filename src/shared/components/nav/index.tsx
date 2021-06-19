@@ -2,7 +2,8 @@ import { faImages, faMap, faFutbol } from "@fortawesome/free-regular-svg-icons";
 import { faBook, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { Header } from "semantic-ui-react";
 import { ROUTES } from "../../constants/constants";
 
 import "./nav.scss";
@@ -38,9 +39,9 @@ const NavComponent = () => {
   ];
   return (
     <div className="nav-component">
-      <NavLink className="nav-link" to="/">
-        <img src="/imageAssets/logo.png" alt="logo" />
-      </NavLink>
+      <Link to="/" id="bluedcraft">
+        <Header as="h3">Bluedcraft 梦の世界</Header>
+      </Link>
       {navBarLinks.map((link, index) => {
         return (
           <NavLink

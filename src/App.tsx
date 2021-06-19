@@ -12,7 +12,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavComponent />
+        <div id="topNav">
+          <NavComponent />
+        </div>
         <div className="app">
           <Switch>
             <Route path="/" exact component={HomeComponent} />
@@ -21,6 +23,9 @@ function App() {
             <Route path={ROUTES.GALLERY} exact component={GalleryComponent} />
           </Switch>
           {/* <FooterComponent /> */}
+        </div>
+        <div id="bottomNav">
+          <NavComponent />
         </div>
       </BrowserRouter>
     </div>
