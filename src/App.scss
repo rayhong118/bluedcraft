@@ -32,19 +32,12 @@
   height: 100%;
   max-width: 1920px;
   margin: auto;
+  margin-top: 0;
+  padding-bottom: 4rem;
 }
 
 #topNav {
   display: none;
-}
-@media (min-width: constants.$mobile-desktop-breakpoint) {
-  #topNav {
-    z-index: 10;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    display: block;
-  }
 }
 #bottomNav {
   z-index: 10;
@@ -55,7 +48,19 @@
   display: block;
   background-color: white;
 }
+
 @media (min-width: constants.$mobile-desktop-breakpoint) {
+  .page {
+    margin-top: 4rem;
+    padding-bottom: 0;
+  }
+  #topNav {
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: block;
+  }
   #bottomNav {
     display: none;
   }

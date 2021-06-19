@@ -13,7 +13,7 @@
     height: 100%;
     width: 100%;
     text-decoration: none;
-    color: grey;
+    color: constants.$dark-gray;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,7 @@
 
   .nav-link:is(:hover, :focus) {
     outline: 0;
-    background-color: lightgray;
+    background-color: constants.$light-gray;
     transition: 0.5s;
     transition-timing-function: linear;
   }
@@ -80,7 +80,7 @@
 
     .nav-link:is(:hover, :focus) {
       outline: 0;
-      box-shadow: 0 -3px inset constants.$light-gray;
+      box-shadow: 0 -3px inset constants.$theme-gradient-3;
       background-color: transparent;
       transition: 0.5s;
       transition-timing-function: linear;

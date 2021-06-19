@@ -1,16 +1,55 @@
 import React, { useEffect, useState } from "react";
+import {
+  faImages,
+  faMap,
+  faFutbol,
+  faCompass,
+} from "@fortawesome/free-regular-svg-icons";
 import { Grid, Segment } from "semantic-ui-react";
 import FooterComponent from "../../shared/components/footer";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../shared/constants/constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const Home = () => {
   // use local storage to check if need to display newbie guide
   // user can manually dismiss the guide
   //const bannerImgUrl = "/imageAssets/bg-main-3.jpg";
 
-  const listOfNavBox = [{ title: "", description: "", bgImgUrl: "" }];
+  const listOfNavBox = [
+    {
+      url: ROUTES.GUIDE,
+      icon: faCompass,
+      title: "新人须知[施工中]",
+      description: "新玩家与有加入意向的玩家请看这里",
+      bgImgUrl: "",
+    },
+    {
+      url: ROUTES.WIKI,
+      icon: faBook,
+      title: "服务器百科[施工中]",
+      description: "",
+      bgImgUrl: "",
+    },
+    {
+      url: ROUTES.DYNMAP,
+      icon: faMap,
+      title: "卫星地图",
+      description: "",
+      bgImgUrl: "",
+    },
+    {
+      url: ROUTES.WIKI,
+      icon: faBook,
+      title: "服务器百科[施工中]",
+      description: "",
+      bgImgUrl: "",
+    },
+  ];
   const listOfBannerImg = [{ url: "", description: "" }];
 
   const [bannerImgUrl, setBannerImgUrl] = useState<string>(
-    "/imageAssets/bg-main-3.jpg"
+    "/imageAssets/bg-main-2.jpg"
   );
   useEffect(() => {
     const dateNow = new Date();
@@ -33,12 +72,17 @@ export const Home = () => {
       </div>
 
       <div className="list-of-nav">
-        <div className="nav-box">
-          新人须知 新加入服务器的玩家与有意向加入的玩家请看这里
-        </div>
-        <div className="nav-box">服务器百科</div>
-        <div className="nav-box">图册</div>
-        <div className="nav-box">新闻</div>
+        {listOfNavBox.map((navBox) => {
+          return (
+            <Link className="nav-box" to={navBox.url}>
+              <h1>
+                <FontAwesomeIcon className="nav-icon" icon={navBox.icon} />{" "}
+                {navBox.title}
+              </h1>
+              <h3>{navBox.description}</h3>
+            </Link>
+          );
+        })}
       </div>
 
       <h3 className="paragraph">
