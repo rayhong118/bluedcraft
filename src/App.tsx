@@ -7,8 +7,8 @@ import WikiComponent from "./components/wiki";
 import { ROUTES } from "./shared/constants/constants";
 import DynmapComponent from "./components/dynmap";
 import GalleryComponent from "./components/gallery";
-import FooterComponent from "./shared/components/footer";
 import GuideComponent from "./components/guide";
+
 function App() {
   return (
     <div className="App">
