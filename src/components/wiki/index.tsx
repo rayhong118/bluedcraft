@@ -1,12 +1,10 @@
 import { Wiki } from "./wiki";
-import { WikiEdit } from "./wiki-edit";
 
 const WikiComponent = () => {
   return (
-    <>
+    <div className="page">
       <Wiki />
-      <WikiEdit />
-    </>
+    </div>
   );
 };
 export default WikiComponent;
