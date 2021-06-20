@@ -1,10 +1,26 @@
 @use '../../shared/constants/constants.scss';
 #guide {
-  padding: 0 constants.$mobile-margin;
+  #guide1 {
+    padding: 2rem constants.$mobile-margin;
+  }
+  #guide2 {
+    padding: 2rem constants.$mobile-margin;
+  }
 }
 
 @media (min-width: constants.$mobile-desktop-breakpoint) {
   #guide {
-    padding: 0 constants.$desktop-margin;
+    font-size: 1.25rem;
+
+    #guide1 {
+      padding: 2rem constants.$desktop-margin;
+    }
+    #guide2 {
+      padding: 2rem constants.$desktop-margin;
+    }
+
+    a {
+      color: constants.$theme-gradient-1;
+    }
   }
 }
