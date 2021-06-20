@@ -8,6 +8,7 @@ import { ROUTES } from "./shared/constants/constants";
 import DynmapComponent from "./components/dynmap";
 import GalleryComponent from "./components/gallery";
 import FooterComponent from "./shared/components/footer";
+import GuideComponent from "./components/guide";
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
             <Route path={ROUTES.WIKI} exact component={WikiComponent} />
             <Route path={ROUTES.DYNMAP} exact component={DynmapComponent} />
             <Route path={ROUTES.GALLERY} exact component={GalleryComponent} />
+            <Route path={ROUTES.GUIDE} exact component={GuideComponent} />
           </Switch>
           {/* <FooterComponent /> */}
         </div>

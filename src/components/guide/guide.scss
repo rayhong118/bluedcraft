@@ -1,0 +1,10 @@
+@use '../../shared/constants/constants.scss';
+#guide {
+  padding: 0 constants.$mobile-margin;
+}
+
+@media (min-width: constants.$mobile-desktop-breakpoint) {
+  #guide {
+    padding: 0 constants.$desktop-margin;
+  }
+}

@@ -2,7 +2,11 @@ import { Guide } from "./guide";
 import "./guide.scss";
 
 const GuideComponent = () => {
-  return <Guide />;
+  return (
+    <div className="page">
+      <Guide />
+    </div>
+  );
 };
 
 export default GuideComponent;
