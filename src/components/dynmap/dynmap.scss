@@ -1,23 +1,13 @@
-.dynmap-page {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
 .dynmap-iframe {
-  flex-grow: 1;
   border: none;
+  height: calc(100vh - 60px);
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 .dynmap-loading {
-  top: 0;
-  flex: 1 1 auto;
   width: 100%;
   height: 100%;
   display: grid;
   place-items: center;
-  position: absolute;
 }

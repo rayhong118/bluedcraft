@@ -6,7 +6,7 @@ export const Dynmap = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="dynmap-page">
+    <div className="page">
       <iframe
         src="http://mc.bluedcraft.com:2333/"
         title="Bluedcraft Server Map"
