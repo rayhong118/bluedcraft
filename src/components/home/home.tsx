@@ -72,9 +72,9 @@ export const Home = () => {
       </div>
 
       <div className="list-of-nav">
-        {listOfNavBox.map((navBox) => {
+        {listOfNavBox.map((navBox, index) => {
           return (
-            <Link className="nav-box" to={navBox.url}>
+            <Link className="nav-box" to={navBox.url} key={`navBox${index}`}>
               <h1>
                 <FontAwesomeIcon className="nav-icon" icon={navBox.icon} />{" "}
                 {navBox.title}
