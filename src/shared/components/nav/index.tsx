@@ -1,5 +1,9 @@
 import { faImages, faMap, faFutbol } from "@fortawesome/free-regular-svg-icons";
-import { faBook, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBook,
+  faHome,
+  IconDefinition,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
@@ -16,6 +20,7 @@ interface navBarLink {
 }
 const NavComponent = () => {
   const navBarLinks: navBarLink[] = [
+    { path: "/", zh: "主页", icon: faHome },
     {
       path: ROUTES.WIKI,
       zh: "百科",
@@ -45,6 +50,7 @@ const NavComponent = () => {
       {navBarLinks.map((link, index) => {
         return (
           <NavLink
+            exact={link.path === "/"}
             key={`navlink${index}`}
             className="nav-link"
             activeClassName="nav-link-active"

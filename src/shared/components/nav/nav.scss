@@ -5,6 +5,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  height: 4rem;
+  align-items: center;
 
   #bluedcraft {
     display: none;
@@ -17,14 +19,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 
     padding: 0.5rem 0;
 
     transition: 0.5s;
     transition-timing-function: linear;
 
-    img {
-      height: 1rem;
+    .nav-icon {
+      font-size: 1.2rem;
     }
   }
 
@@ -72,7 +75,9 @@
       margin: 0 0.5rem;
       transition: 0.5s;
       transition-timing-function: linear;
-
+      .nav-icon {
+        font-size: 1rem;
+      }
       img {
         height: 1rem;
       }
