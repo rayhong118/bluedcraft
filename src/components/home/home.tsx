@@ -20,7 +20,7 @@ export const Home = () => {
     {
       url: ROUTES.GUIDE,
       icon: faCompass,
-      title: "新人须知[施工中]",
+      title: "新人须知",
       description: "新玩家与有加入意向的玩家请看这里",
       bgImgUrl: "",
     },
