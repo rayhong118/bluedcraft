@@ -21,4 +21,40 @@ export const WikiData: WikiArticle[] = [
     ],
   },
   { title: "官方收购价格", description: "", content: [] },
+  {
+    title: "基础指令", description: "", content: [
+      "传送",
+      "/wp 打开传送面板-仅限于平川及洛卡使用",
+      "/tpa 需加入城镇",
+      "/spawn 传送至出生点（洛卡会传送至离自己最近的出生点）",
+      "/city 家与出生点设置",
+      "经济",
+      "/bdeco create 创建银行账户（没有账号无法完成货币交易）",
+      "/bdeco pay 转账",
+    ]
+  },
+  {
+    title: "城镇：雪城", description: "", content: [
+      "加入条件: 平川NPC",
+      "城主：Aluminum_Z",
+      "建筑限制：",
+      "简介",
+    ]
+  },
+  {
+    title: "城镇：蓝星", description: "", content: [
+      "加入条件: 平川NPC",
+      "城主：Cloud_luo",
+      "建筑限制：主城区内用地需审批。整体建筑风格保持一致",
+      "简介",
+    ]
+  },
+  {
+    title: "城镇：彩云", description: "", content: [
+      "加入条件: 平川NPC",
+      "城主：Truly_false",
+      "建筑限制：",
+      "简介",
+    ]
+  },
 ];
