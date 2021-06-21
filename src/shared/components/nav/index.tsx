@@ -36,11 +36,11 @@ const NavComponent = () => {
       zh: "相册",
       icon: faImages,
     },
-    {
-      path: ROUTES.GALLERY,
-      zh: "活动",
-      icon: faFutbol,
-    },
+    // {
+    //   path: ROUTES.GALLERY,
+    //   zh: "活动",
+    //   icon: faFutbol,
+    // },
   ];
   return (
     <div className="nav-component">
