@@ -1,0 +1,49 @@
+@use '../../shared/constants/constants.scss';
+
+.wiki-container {
+  margin: 2rem constants.$mobile-margin;
+}
+
+.wiki-article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  .link-to-article {
+    line-height: 1.2rem;
+  }
+}
+
+@media (min-width: constants.$mobile-desktop-breakpoint) {
+  .wiki-container {
+    margin: 2rem constants.$desktop-margin;
+    .wiki-search {
+      padding: 1rem 0;
+
+      input,
+      button {
+        padding: 0.25rem;
+      }
+    }
+  }
+  #wikiNoResult {
+    padding: 1rem 0;
+    border-bottom: 2px solid constants.$theme-shade-3;
+
+    svg {
+      color: red;
+      margin-right: 1rem;
+    }
+  }
+  .wiki-article-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    .link-to-article {
+      line-height: 1.2rem;
+    }
+  }
+}

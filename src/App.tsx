@@ -19,7 +19,7 @@ function App() {
         <div className="app">
           <Switch>
             <Route path="/" exact component={HomeComponent} />
-            <Route path={ROUTES.WIKI} exact component={WikiComponent} />
+            <Route path={ROUTES.WIKI} component={WikiComponent} />
             <Route path={ROUTES.DYNMAP} exact component={DynmapComponent} />
             <Route path={ROUTES.GALLERY} exact component={GalleryComponent} />
             <Route path={ROUTES.GUIDE} exact component={GuideComponent} />
