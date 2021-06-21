@@ -47,7 +47,6 @@ export const Home = () => {
   useEffect(() => {
     const dateNow = new Date();
     const hourNow = dateNow.getHours();
-    console.log(hourNow);
   }, []);
 
   return (
@@ -78,9 +77,7 @@ export const Home = () => {
         })}
       </div>
 
-      <h1 className="paragraph">
-        公益的心 永不改变
-      </h1>
+      <h1 className="paragraph">公益的心 永不改变</h1>
 
       <div id="featureListTitle">
         <h1>服务器特色</h1>
