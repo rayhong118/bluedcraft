@@ -27,21 +27,14 @@ export const Home = () => {
     {
       url: ROUTES.WIKI,
       icon: faBook,
-      title: "服务器百科[施工中]",
-      description: "",
+      title: "服务器百科",
+      description: "条目完善中",
       bgImgUrl: "",
     },
     {
       url: ROUTES.DYNMAP,
       icon: faMap,
       title: "卫星地图",
-      description: "",
-      bgImgUrl: "",
-    },
-    {
-      url: ROUTES.WIKI,
-      icon: faBook,
-      title: "服务器百科[施工中]",
       description: "",
       bgImgUrl: "",
     },
