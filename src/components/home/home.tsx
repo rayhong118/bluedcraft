@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { Grid, Segment } from "semantic-ui-react";
 import FooterComponent from "../../shared/components/footer";
-import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faServer } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../shared/constants/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,6 +35,13 @@ export const Home = () => {
       url: ROUTES.DYNMAP,
       icon: faMap,
       title: "卫星地图",
+      description: "",
+      bgImgUrl: "",
+    },
+    {
+      url: ROUTES.SERVICE,
+      icon: faServer,
+      title: "服务状态",
       description: "",
       bgImgUrl: "",
     },

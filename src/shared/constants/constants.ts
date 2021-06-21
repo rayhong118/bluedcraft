@@ -3,6 +3,7 @@ export const ROUTES = {
   WIKI: "/wiki",
   DYNMAP: "/dynmap",
   GALLERY: "/gallery",
+  SERVICE: "/"
 };
 
 export enum WIKI_ITEM_TYPES {
