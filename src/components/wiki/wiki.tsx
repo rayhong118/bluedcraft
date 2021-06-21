@@ -1,13 +1,12 @@
 import {
   faAngleLeft,
-  faCross,
   faExclamationTriangle,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { ROUTES, WIKI_ITEM_TYPES } from "../../shared/constants/constants";
+import { ROUTES } from "../../shared/constants/constants";
 import { WikiData } from "./wikiData";
 
 interface WikiImgUrl {
@@ -139,7 +138,12 @@ export const Wiki = () => {
             console.log(typeof item);
             if (typeof item === "string")
               return <p key={"item" + index}>{item}</p>;
-            else return <img key={"item" + index} src={item.imgUrl} />;
+            else
+              return (
+                <p key={"item" + index}>
+                  <img src={item.imgUrl} />
+                </p>
+              );
           })}
         </div>
       </div>

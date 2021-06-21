@@ -2,6 +2,20 @@
 
 .wiki-container {
   margin: 2rem constants.$mobile-margin;
+  .wiki-search {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+
+    input {
+      flex-grow: 1;
+    }
+
+    input,
+    button {
+      padding: 0.25rem;
+    }
+  }
 }
 
 .wiki-article-list {
@@ -11,6 +25,7 @@
   margin-bottom: 2rem;
   .link-to-article {
     line-height: 1.2rem;
+    border-bottom: 1px solid constants.$theme-gradient-1;
   }
 }
 
@@ -19,6 +34,7 @@
     margin: 2rem constants.$desktop-margin;
     .wiki-search {
       padding: 1rem 0;
+      display: block;
 
       input,
       button {
@@ -44,6 +60,7 @@
 
     .link-to-article {
       line-height: 1.2rem;
+      border-bottom: 1px solid constants.$theme-gradient-1;
     }
   }
 }
