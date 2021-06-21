@@ -49,7 +49,7 @@ export const Wiki = () => {
   useEffect(() => {
     let pathName = history.location.pathname;
     let articleTitle = pathName.split("/").pop();
-    console.log(articleTitle);
+
     if (articleTitle === "wiki") setArticleTitle("");
     else {
       setArticleTitle(articleTitle || "");
@@ -135,7 +135,6 @@ export const Wiki = () => {
         <div>{wikiArticle.description}</div>
         <div>
           {wikiArticle.content?.map((item, index) => {
-            console.log(typeof item);
             if (typeof item === "string")
               return <p key={"item" + index}>{item}</p>;
             else
