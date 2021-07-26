@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { ROUTES } from "../../shared/constants/constants";
+import { StoreSetupGuidePage } from "./pages/storeSetupGuide";
 import { WikiData } from "./wikiData";
 
 interface WikiImgUrl {
@@ -122,6 +123,8 @@ export const Wiki = () => {
             })}
           </div>
         </div>
+
+        <StoreSetupGuidePage />
       </div>
     );
   else
