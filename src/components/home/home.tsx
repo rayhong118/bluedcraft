@@ -1,11 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {
-  faImages,
-  faMap,
-  faFutbol,
-  faCompass,
-} from "@fortawesome/free-regular-svg-icons";
-import { Grid, Segment } from "semantic-ui-react";
+import { useEffect, useState } from "react";
+import { faMap, faCompass } from "@fortawesome/free-regular-svg-icons";
 import FooterComponent from "../../shared/components/footer";
 import { faBook, faServer } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
