@@ -3,13 +3,13 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
 interface ArticleProps {
-  article: string;
+  article: number;
 }
 
 export const Article: React.FC<ArticleProps> = ({ article }) => {
   const [shit, setShit] = useState<string>("");
   useEffect(() => {
-    let path = `/wikiArticles/0${article}.md`;
+    let path = `/wikiArticles/${article}.md`;
     console.log("path", path);
     fetch(path)
       .then((response) => response.text())

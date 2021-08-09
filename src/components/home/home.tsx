@@ -40,6 +40,8 @@ export const Home = () => {
       bgImgUrl: "",
     },
   ];
+
+  // TODO: add a list of banner images
   const listOfBannerImg = [{ url: "", description: "" }];
 
   const [bannerImgUrl, setBannerImgUrl] = useState<string>(

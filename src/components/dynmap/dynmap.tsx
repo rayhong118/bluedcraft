@@ -1,7 +1,6 @@
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import FooterComponent from "../../shared/components/footer";
 import "./dynmap.scss";
 export const Dynmap = () => {
   const [isLoading, setIsLoading] = useState(true);
