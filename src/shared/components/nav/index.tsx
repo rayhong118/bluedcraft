@@ -5,9 +5,7 @@ import {
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Header } from "semantic-ui-react";
 import { ROUTES } from "../../constants/constants";
 
 import "./nav.scss";
@@ -45,7 +43,7 @@ const NavComponent = () => {
   return (
     <div className="nav-component">
       <Link to="/" id="bluedcraft">
-        <Header as="h3">Bluedcraft 梦の世界</Header>
+        <h3>Bluedcraft 梦の世界</h3>
       </Link>
       {navBarLinks.map((link, index) => {
         return (

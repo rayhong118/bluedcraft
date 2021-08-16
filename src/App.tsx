@@ -1,5 +1,4 @@
 import "./App.scss";
-import "semantic-ui-css/semantic.min.css";
 import NavComponent from "./shared/components/nav";
 import HomeComponent from "./components/home";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
