@@ -20,12 +20,13 @@
 }
 
 .wiki-article-list {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 2rem;
   .link-to-article {
-    line-height: 1.2rem;
+    line-height: 2.4rem;
     border-bottom: 1px solid constants.$theme-gradient-1;
   }
 }
@@ -61,7 +62,6 @@
     margin-bottom: 2rem;
 
     .link-to-article {
-      line-height: 1.2rem;
       border-bottom: 1px solid constants.$theme-gradient-1;
     }
   }

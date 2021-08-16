@@ -42,7 +42,12 @@ export const Home = () => {
   ];
 
   // TODO: add a list of banner images
-  const listOfBannerImg = [{ url: "", description: "" }];
+  const listOfBannerImg = [
+    { url: "/imageAssets/bg-main-0.jpg", description: "平川车站-服务器出生点" },
+    { url: "/imageAssets/bg-main-1.jpg", description: "旧平川-现代城市" },
+    { url: "/imageAssets/bg-main-2.jpg", description: "旧平川-现代城市" },
+    { url: "/imageAssets/bg-main-3.jpg", description: "旧平川-现代城市" },
+  ];
 
   const [bannerImgUrl, setBannerImgUrl] = useState<string>(
     "/imageAssets/bg-main-2.jpg"
