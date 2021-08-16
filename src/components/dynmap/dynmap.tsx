@@ -8,7 +8,7 @@ export const Dynmap = () => {
   return (
     <div className="page">
       <iframe
-        src="http://mc.bluedcraft.com:2333/"
+        src="http://mc.bluedcraft.com:2333/login.html"
         title="Bluedcraft Server Map"
         className="dynmap-iframe"
         onLoad={() => setIsLoading(false)}
