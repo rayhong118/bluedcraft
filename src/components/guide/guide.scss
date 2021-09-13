@@ -6,6 +6,10 @@
   #guide2 {
     padding: 2rem constants.$mobile-margin;
   }
+  input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+  }
 }
 
 @media (min-width: constants.$mobile-desktop-breakpoint) {
