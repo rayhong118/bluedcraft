@@ -48,10 +48,9 @@ const NavComponent = () => {
       {navBarLinks.map((link, index) => {
         return (
           <NavLink
-            exact={link.path === "/"}
+            end={link.path === "/"}
             key={`navlink${index}`}
-            className="nav-link"
-            activeClassName="nav-link-active"
+            className={({ isActive }) => "nav-link" + (isActive ? " activated" : "")}
             to={link.path}
           >
             {link.icon && (
