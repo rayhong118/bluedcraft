@@ -10,7 +10,6 @@ export const Article: React.FC<ArticleProps> = ({ article }) => {
   const [shit, setShit] = useState<string>("");
   useEffect(() => {
     let path = `/wikiArticles/${article}.md`;
-    console.log("path", path);
     fetch(path)
       .then((response) => response.text())
       .then((text) => {
