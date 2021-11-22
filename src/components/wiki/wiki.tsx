@@ -1,7 +1,7 @@
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { WikiData } from "./articleList";
 import { ListOfArticles } from "./listOfArticles";
 import { Article } from "./article";
@@ -14,18 +14,16 @@ export interface WikiArticle {
 }
 
 export const Wiki = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [wikiArticleId, setWikiArticleId] = useState<number>();
 
   useEffect(() => {
     let pathName = location.pathname;
     let articleId = pathName.split("/").pop();
-
     let articleData = WikiData.find((data) => data.id.toString() === articleId);
-    console.log(articleData);
     setWikiArticleId(articleData ? articleData.id : undefined);
   }, [location.pathname]);
-
   if (wikiArticleId == undefined)
     return (
       <div className="wiki-container">
@@ -35,14 +33,14 @@ export const Wiki = () => {
   else
     return (
       <div className="wiki-container">
-        {/* <button
+        {<button
           className="button"
           onClick={() => {
-            history.goBack();
+            navigate(-1);
           }}
         >
           <FontAwesomeIcon icon={faAngleLeft} /> 返回
-        </button> */}
+        </button>}
         <Article article={wikiArticleId} />
       </div>
     );

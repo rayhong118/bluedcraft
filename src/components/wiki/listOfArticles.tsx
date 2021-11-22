@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ROUTES } from "../../shared/constants/constants";
 import { WikiArticle } from "./wiki";
 
 interface ListOfArticlesProps {
@@ -16,7 +15,7 @@ export const ListOfArticles: React.FC<ListOfArticlesProps> = ({
           <Link
             className="link-to-article"
             key={"article" + article.id}
-            to={`${ROUTES.WIKI}/${article.id}`}
+            to={`${article.id}`}
           >
             {article.title}
           </Link>

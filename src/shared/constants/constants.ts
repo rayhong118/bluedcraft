@@ -1,6 +1,6 @@
 export const ROUTES = {
   GUIDE: "/guide",
-  WIKI: "/wiki",
+  WIKI: "/wiki/*",
   DYNMAP: "/dynmap",
   GALLERY: "/gallery",
   SERVICE: "/"
