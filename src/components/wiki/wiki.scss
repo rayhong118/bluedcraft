@@ -1,5 +1,16 @@
 @use '../../shared/constants/constants.scss';
 
+.wiki-page {
+  display: flex;
+  margin: 1rem constants.$mobile-margin;
+  justify-content: center;
+  flex-direction: row;
+
+  .wiki-nav {
+    display: none;
+  }
+}
+
 .wiki-container {
   margin: 1rem constants.$mobile-margin;
 
@@ -33,6 +44,17 @@
 }
 
 @media (min-width: constants.$mobile-desktop-breakpoint) {
+  .wiki-page {
+    display: flex;
+    margin: 4rem constants.$desktop-margin;
+    justify-content: flex-start;
+
+    .wiki-nav {
+      margin-top: 2rem;
+      display: block;
+    }
+  }
+
   .wiki-container {
     margin: 1rem constants.$desktop-margin;
     padding: 1rem 0;
