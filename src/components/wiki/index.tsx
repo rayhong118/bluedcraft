@@ -7,7 +7,6 @@ import "./wiki.scss";
 
 const WikiComponent = () => {
   return (
-    // TODO: resize
     <div className="wiki-page">
       <div className="wiki-nav">
         <WikiNav listOfArticles={WikiData} />
