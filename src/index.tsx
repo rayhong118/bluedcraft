@@ -3,6 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { faSearch, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { registerIcons } from '@fluentui/react/lib/Styling';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { initializeIcons } from '@fluentui/font-icons-mdl2';
+
+initializeIcons();
+
+registerIcons({
+  icons: {
+    FaAngleLeft: <FontAwesomeIcon icon={faAngleLeft} />,
+    FaSearch: <FontAwesomeIcon icon={faSearch} />
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>

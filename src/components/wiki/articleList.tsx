@@ -2,30 +2,39 @@ import { WikiArticle } from "./wiki";
 
 export const WikiData: WikiArticle[] = [
   {
-    id: 0,
-    title: "玩家商店使用指南",
-    description: "创建玩家店铺",
+    catalog: "basic",
+    title: "基础",
+    list: [{
+      id: 0,
+      title: "玩家商店使用指南",
+      description: "创建玩家店铺",
+    },
+    {
+      id: 1,
+      title: "官方收购价格",
+      description: "",
+    },
+    {
+      id: 2,
+      title: "建筑师考核",
+      description: "关于建筑师等级和各级考核要求",
+    },
+    {
+      id: 3,
+      title: "基础指令",
+      description: "",
+      content: `",`,
+    },
+    ]
   },
   {
-    id: 1,
-    title: "官方收购价格",
-    description: "",
-  },
-  {
-    id: 2,
-    title: "建筑师考核",
-    description: "关于建筑师等级和各级考核要求",
-  },
-  {
-    id: 3,
-    title: "基础指令",
-    description: "",
-    content: `",`,
-  },
-  {
-    id: 4,
+    catalog: "town",
     title: "城镇",
-    description: "城镇详细介绍",
+    list: [{
+      id: 4,
+      title: "城镇",
+      description: "城镇详细介绍",
+    }]
   },
   // {
   //   id: 0,
