@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 
 interface ArticleProps {
   article: number;
@@ -18,7 +19,7 @@ export const Article: React.FC<ArticleProps> = ({ article }) => {
   }, [article]);
   return (
     <>
-      <ReactMarkdown rehypePlugins={[rehypeRaw]} children={shit} />
+      <ReactMarkdown rehypePlugins={[rehypeRaw, remarkGfm]} children={shit} />
     </>
   );
 };

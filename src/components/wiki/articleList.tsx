@@ -25,33 +25,80 @@ export const WikiData: WikiArticle[] = [
       description: "",
       content: `",`,
     },
+    {
+      id: 30,
+      title: "权限组",
+      description: "",
+      content: `",`,
+    },
     ]
   },
   {
-    catalog: "town",
-    title: "城镇",
+    catalog: "area",
+    title: "城镇及地区",
     list: [{
       id: 4,
-      title: "城镇",
+      title: "洛卡",
       description: "城镇详细介绍",
-    }]
+    },
+    {
+      id: 5,
+      title: "羊坊",
+      description: "城镇详细介绍",
+    },
+    {
+      id: 6,
+      title: "雪城",
+      description: "城镇详细介绍",
+    },
+    {
+      id: 7,
+      title: "蓝星",
+      description: "城镇详细介绍",
+    },
+    {
+      id: 8,
+      title: "彩云",
+      description: "城镇详细介绍",
+    },
+    {
+      id: 9,
+      title: "时雨",
+      description: "城镇详细介绍",
+    },
+    {
+      id: 10,
+      title: "矿界-普顿",
+      description: "地区详细介绍",
+    },
+    {
+      id: 11,
+      title: "平川",
+      description: "地区详细介绍",
+    }
+    ]
   },
-  // {
-  //   id: 0,
-  //   title: "卡片",
-  //   description: "",
-  //   content: ["访问 http://help.bluedcraft.com/plugin/"],
-  // },
-  // {
-  //   id: 0,
-  //   title: "烹饪",
-  //   description: "",
-  //   content: ["访问 http://help.bluedcraft.com/plugin/"],
-  // },
-  // {
-  //   id: 0,
-  //   title: "载具",
-  //   description: "",
-  //   content: ["访问 http://help.bluedcraft.com/plugin/"],
-  // },
+  {
+    catalog: "function",
+    title: "功能",
+    list: [ {
+      id: 20,
+      title: "卡片",
+      description: "",
+      content: "访问 http://help.bluedcraft.com/plugin/",
+    },
+    {
+      id: 21,
+      title: "烹饪",
+      description: "",
+      content: "访问 http://help.bluedcraft.com/plugin/",
+    },
+    {
+      id: 22,
+      title: "载具",
+      description: "",
+      content: "访问 http://help.bluedcraft.com/plugin/",
+    },
+    ]
+  }
 ];
