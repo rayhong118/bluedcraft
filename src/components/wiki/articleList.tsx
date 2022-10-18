@@ -75,6 +75,11 @@ export const WikiData: WikiArticle[] = [
       id: 11,
       title: "平川",
       description: "地区详细介绍",
+    },
+    {
+      id: 12,
+      title: "瓦兰",
+      description: "地区详细介绍",
     }
     ]
   },
