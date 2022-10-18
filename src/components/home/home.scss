@@ -25,9 +25,11 @@
       justify-content: flex-end;
       color: white;
       text-shadow: 1px 1px 2px black;
+
       h1 {
         font-size: 2.5rem;
       }
+
       h2 {
         margin-top: 0;
         margin-bottom: 1rem;
@@ -45,6 +47,7 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
     grid-auto-rows: minmax(200px, auto);
+
     .nav-box {
       border-radius: 2rem;
       border: 3px solid constants.$theme-color;
@@ -69,18 +72,36 @@
     //color: constants.$theme-shade-2;
     background-color: constants.$light-gray;
   }
+
   #featureListTitle {
     display: grid;
     place-items: center;
   }
+
   .list-of-feature {
     margin: 1rem constants.$mobile-margin;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
     grid-auto-rows: minmax(300px, auto);
+
     .feature {
+      display: flex;
+      flex-direction: column;
       border: 1px solid constants.$light-gray;
+    }
+
+    img {
+      box-sizing: content-box;
+      image-rendering: pixelated !important;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
     }
   }
 }
@@ -112,9 +133,11 @@
         justify-content: flex-end;
         color: white;
         text-shadow: 1px 1px 2px black;
+
         h1 {
           font-size: 4rem;
         }
+
         h2 {
           margin-top: 0;
           margin-bottom: 1rem;
@@ -138,6 +161,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
       grid-auto-rows: minmax(300px, auto);
+
       .nav-box {
         text-decoration: none;
         border: 2px solid constants.$theme-color;
@@ -149,18 +173,34 @@
       //color: constants.$theme-shade-2;
       background-color: constants.$light-gray;
     }
+
     #featureListTitle {
       display: grid;
       place-items: center;
     }
+
     .list-of-feature {
       margin: 2rem constants.$desktop-margin;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
       grid-auto-rows: minmax(300px, auto);
+
       .feature {
         border: 1px solid constants.$light-gray;
+      }
+
+      img {
+        box-sizing: content-box;
+        image-rendering: pixelated !important;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .subtitle {
+        text-align: center;
       }
     }
   }
