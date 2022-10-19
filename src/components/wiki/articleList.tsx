@@ -4,16 +4,7 @@ export const WikiData: WikiArticle[] = [
   {
     catalog: "basic",
     title: "基础",
-    list: [{
-      id: 0,
-      title: "玩家商店使用指南",
-      description: "创建玩家店铺",
-    },
-    {
-      id: 1,
-      title: "官方收购价格",
-      description: "",
-    },
+    list: [
     {
       id: 2,
       title: "建筑师考核",
@@ -30,6 +21,26 @@ export const WikiData: WikiArticle[] = [
       title: "权限组",
       description: "",
       content: `",`,
+    },
+    ]
+  },
+  {
+    catalog: "economy",
+    title: "经济",
+    list: [{
+      id: 40,
+      title: "玩家交易货物",
+      description: "创建玩家店铺",
+    },
+    {
+      id: 41,
+      title: "官方收购价格",
+      description: "",
+    },
+    {
+      id: 42,
+      title: "税收",
+      description: "",
     },
     ]
   },
@@ -103,6 +114,11 @@ export const WikiData: WikiArticle[] = [
       title: "载具",
       description: "",
       content: "访问 http://help.bluedcraft.com/plugin/",
+    },
+    {
+      id: 23,
+      title: "装备",
+      description: "",
     },
     ]
   }
