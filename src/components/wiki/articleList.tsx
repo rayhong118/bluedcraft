@@ -5,23 +5,23 @@ export const WikiData: WikiArticle[] = [
     catalog: "basic",
     title: "基础",
     list: [
-    {
-      id: 2,
-      title: "建筑师考核",
-      description: "关于建筑师等级和各级考核要求",
-    },
-    {
-      id: 3,
-      title: "基础指令",
-      description: "",
-      content: `",`,
-    },
-    {
-      id: 30,
-      title: "权限组",
-      description: "",
-      content: `",`,
-    },
+      {
+        id: 2,
+        title: "建筑师考核",
+        description: "关于建筑师等级和各级考核要求",
+      },
+      {
+        id: 3,
+        title: "基础指令",
+        description: "",
+        content: `",`,
+      },
+      {
+        id: 30,
+        title: "权限组",
+        description: "",
+        content: `",`,
+      },
     ]
   },
   {
@@ -97,7 +97,7 @@ export const WikiData: WikiArticle[] = [
   {
     catalog: "function",
     title: "功能",
-    list: [ {
+    list: [{
       id: 20,
       title: "卡片",
       description: "",
@@ -113,13 +113,32 @@ export const WikiData: WikiArticle[] = [
       id: 22,
       title: "载具",
       description: "",
-      content: "访问 http://help.bluedcraft.com/plugin/",
     },
     {
       id: 23,
       title: "装备",
       description: "",
     },
+    {
+      id: 24,
+      title: "唱片",
+      description: "MIDI唱片",
+    },
+    {
+      id: 25,
+      title: "武器",
+      description: "",
+    },
+    ]
+  }, {
+    catalog: "faq",
+    title: "FAQ",
+    list: [
+      {
+        id: 50,
+        title: "资源包",
+        description: "",
+      },
     ]
   }
 ];
