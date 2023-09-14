@@ -5,10 +5,11 @@ import {
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/constants";
 
 import "./nav.scss";
+import { CommandBar, ICommandBarItemProps } from "@fluentui/react";
 
 interface navBarLink {
   path: string;
@@ -16,12 +17,15 @@ interface navBarLink {
   zh: string;
   en?: string;
 }
+
 const NavComponent = () => {
+  const navigate = useNavigate();
   const navBarLinks: navBarLink[] = [
     { path: "/", zh: "主页", icon: faHome },
     {
       path: ROUTES.WIKI,
       zh: "百科",
+
       icon: faBook,
     },
     {
@@ -40,28 +44,36 @@ const NavComponent = () => {
     //   icon: faFutbol,
     // },
   ];
-  return (
-    <div className="nav-component">
-      <Link to="/" id="bluedcraft">
-        <h3>Bluedcraft 梦の世界</h3>
-      </Link>
-      {navBarLinks.map((link, index) => {
-        return (
-          <NavLink
-            end={link.path === "/"}
-            key={`navlink${index}`}
-            className={({ isActive }) => "nav-link" + (isActive ? " activated" : "")}
-            to={link.path}
-          >
-            {link.icon && (
-              <FontAwesomeIcon className="nav-icon" icon={link.icon} />
-            )}
-            {link.zh}
-          </NavLink>
-        );
-      })}
-    </div>
-  );
+
+  const items: ICommandBarItemProps[] = [
+    {
+      key: "home",
+      // iconProps: { iconName: "home" },
+      id: "bluedcraft",
+      text: "Bluedcraft 梦の世界",
+      onClick: () => navigate("/"),
+    },
+    {
+      key: "wiki",
+      text: "百科",
+      onClick: () => navigate(ROUTES.WIKI),
+      iconProps: { iconName: "BookAnswers" },
+    },
+    {
+      key: "dynmap",
+      text: "卫星地图",
+      onClick: () => navigate(ROUTES.DYNMAP),
+      iconProps: { iconName: "World" },
+    },
+    {
+      key: "gallery",
+      text: "相册",
+      onClick: () => navigate(ROUTES.GALLERY),
+      iconProps: { iconName: "ImagePixel" },
+    },
+  ];
+
+  return <CommandBar items={items} className="nav-component"></CommandBar>;
 };
 
 export default NavComponent;
