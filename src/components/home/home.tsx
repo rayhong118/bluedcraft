@@ -41,33 +41,42 @@ export const Home = () => {
     },
   ];
 
+  interface BannerImage {
+    url: string;
+    description: string;
+  }
+
   // TODO: add a list of banner images
-  const listOfBannerImg = [
-    { url: "/imageAssets/bg-main-0.jpg", description: "平川车站-服务器出生点" },
-    { url: "/imageAssets/bg-main-1.jpg", description: "旧平川-现代城市" },
-    { url: "/imageAssets/bg-main-2.jpg", description: "旧平川-现代城市" },
+  const listOfBannerImg: BannerImage[] = [
+    { url: "/imageAssets/bg-main-0.png", description: "平川车站-服务器出生点" },
+    {
+      url: "/imageAssets/bg-main-1.png",
+      description: "平川-高雅雕塑-鸽民纪念广场",
+    },
     { url: "/imageAssets/bg-main-3.jpg", description: "旧平川-现代城市" },
   ];
 
-  const [bannerImgUrl, setBannerImgUrl] = useState<string>(
-    "/imageAssets/bg-main-2.jpg"
-  );
+  const [bannerImg, setBannerImg] = useState<BannerImage>(listOfBannerImg[2]);
   useEffect(() => {
-    const dateNow = new Date();
-    const hourNow = dateNow.getHours();
+    setBannerImg(getRandomImage());
   }, []);
+
+  const getRandomImage = () => {
+    let index = Math.floor(Math.random() * listOfBannerImg.length);
+    return listOfBannerImg[index];
+  };
 
   return (
     <div id="homePage" className="page">
       <div className="banner">
-        <img src={bannerImgUrl} alt="" />
+        <img src={bannerImg.url} alt={bannerImg.description} />
 
         <div id="pageTitle">
           <h1>梦の世界</h1>
           <h2>认真|负责|友爱|公益</h2>
         </div>
         <div id="bannerImgDesc">
-          <h3>平川——现代城市</h3>
+          <h3>{bannerImg.description}</h3>
         </div>
       </div>
 
@@ -93,17 +102,22 @@ export const Home = () => {
 
       <div className="list-of-feature">
         <div className="feature">
-          <img src="/imageAssets/ironchestplate_icon32.png" alt="vanilla"/>
+          <img src="/imageAssets/ironchestplate_icon32.png" alt="vanilla" />
           <h2 className="title">原版生存</h2>
           <h5 className="subtitle"> 一切都还是最原汁原味的样子</h5>
         </div>
         <div className="feature">
-          <img src="/imageAssets/woodenaxe_icon32.png" alt="construction team"/>
+          <img
+            src="/imageAssets/woodenaxe_icon32.png"
+            alt="construction team"
+          />
           <h2 className="title">高水平建筑团队</h2>
-          <h5 className="subtitle">从现代城市，到古典村落，再到日式城堡，服务器的建筑团队期待你的加入</h5>
+          <h5 className="subtitle">
+            从现代城市，到古典村落，再到日式城堡，服务器的建筑团队期待你的加入
+          </h5>
         </div>
         <div className="feature">
-          <img src="/imageAssets/fishingrod_icon32.png" alt="mini game"/>
+          <img src="/imageAssets/fishingrod_icon32.png" alt="mini game" />
           <h2 className="title">小游戏</h2>
           <h5 className="subtitle">紧张刺激的足球游戏</h5>
         </div>
