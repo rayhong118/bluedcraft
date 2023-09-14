@@ -64,12 +64,14 @@ const NavComponent = () => {
       text: "卫星地图",
       onClick: () => navigate(ROUTES.DYNMAP),
       iconProps: { iconName: "World" },
+      disabled: true,
     },
     {
       key: "gallery",
       text: "相册",
       onClick: () => navigate(ROUTES.GALLERY),
       iconProps: { iconName: "ImagePixel" },
+      disabled: true,
     },
   ];
 
