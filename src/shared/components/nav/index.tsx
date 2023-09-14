@@ -20,30 +20,6 @@ interface navBarLink {
 
 const NavComponent = () => {
   const navigate = useNavigate();
-  const navBarLinks: navBarLink[] = [
-    { path: "/", zh: "主页", icon: faHome },
-    {
-      path: ROUTES.WIKI,
-      zh: "百科",
-
-      icon: faBook,
-    },
-    {
-      path: ROUTES.DYNMAP,
-      zh: "卫星地图",
-      icon: faMap,
-    },
-    {
-      path: ROUTES.GALLERY,
-      zh: "相册",
-      icon: faImages,
-    },
-    // {
-    //   path: ROUTES.GALLERY,
-    //   zh: "活动",
-    //   icon: faFutbol,
-    // },
-  ];
 
   const items: ICommandBarItemProps[] = [
     {
