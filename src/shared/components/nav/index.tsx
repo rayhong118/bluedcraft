@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/constants";
 
 import "./nav.scss";

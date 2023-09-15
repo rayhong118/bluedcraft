@@ -1,9 +1,7 @@
 import { Wiki } from "./wiki";
 import { WikiNav } from "./nav";
 import { WikiData } from "./articleList";
-import { Stack, IStackItemStyles, IStackStyles } from '@fluentui/react';
 import "./wiki.scss";
-
 
 const WikiComponent = () => {
   return (

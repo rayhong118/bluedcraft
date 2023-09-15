@@ -1,9 +1,6 @@
-import { useState } from "react";
 import "./dynmap.scss";
 import { Image, IImageProps, ImageFit } from "@fluentui/react";
 export const Dynmap = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   const backgroundImageProps: IImageProps = {
     imageFit: ImageFit.cover,
     src: "/imageAssets/dynmap/background.png",

@@ -21,15 +21,14 @@ export const Home = () => {
   ];
 
   const [bannerImg, setBannerImg] = useState<BannerImage>(listOfBannerImg[2]);
-  useEffect(() => {
-    setBannerImg(getRandomImage());
-  }, []);
 
-  const getRandomImage = () => {
+  const setRandomImage = () => {
     let index = Math.floor(Math.random() * listOfBannerImg.length);
-    return listOfBannerImg[index];
+    setBannerImg(listOfBannerImg[index]);
   };
-
+  useEffect(() => {
+    setRandomImage();
+  }, []);
   return (
     <div id="homePage" className="page">
       <div className="banner">

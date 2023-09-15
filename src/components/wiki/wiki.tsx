@@ -3,8 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { WikiData } from "./articleList";
 import { ListOfArticles } from "./listOfArticles";
 import { Article } from "./article";
-import { DefaultButton } from '@fluentui/react/lib/Button';
-import { IIconProps } from '@fluentui/react/lib/Icon';
+import { DefaultButton } from "@fluentui/react/lib/Button";
+import { IIconProps } from "@fluentui/react/lib/Icon";
 
 export interface WikiArticle {
   catalog: string;
@@ -14,14 +14,14 @@ export interface WikiArticle {
     title: string;
     description?: string;
     content?: string;
-  }[]
+  }[];
 }
 
 export const Wiki = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [wikiArticleId, setWikiArticleId] = useState<number>();
-  const faAngleLeft: IIconProps = { iconName: 'FaAngleLeft' };
+  const faAngleLeft: IIconProps = { iconName: "FaAngleLeft" };
 
   useEffect(() => {
     let pathName = location.pathname;
@@ -30,12 +30,14 @@ export const Wiki = () => {
     let catlogId = pathNameGroup.pop();
     let catlogData = WikiData.find((catalog) => catalog.catalog === catlogId);
     let articleData;
-    if (catlogData != undefined) {
-      articleData = catlogData.list.find((data) => data.id.toString() === articleId);
+    if (catlogData !== undefined) {
+      articleData = catlogData.list.find(
+        (data) => data.id.toString() === articleId
+      );
     }
     setWikiArticleId(articleData ? articleData.id : undefined);
   }, [location.pathname]);
-  if (wikiArticleId == undefined)
+  if (wikiArticleId === undefined)
     return (
       <div className="wiki-container">
         <ListOfArticles listOfArticles={WikiData} />
@@ -45,11 +47,15 @@ export const Wiki = () => {
     return (
       <div className="wiki-container">
         {
-          <DefaultButton iconProps={faAngleLeft} text="返回"
+          <DefaultButton
+            iconProps={faAngleLeft}
+            text="返回"
             onClick={() => {
               navigate(-1);
             }}
-            allowDisabledFocus />}
+            allowDisabledFocus
+          />
+        }
         <Article article={wikiArticleId} />
       </div>
     );
