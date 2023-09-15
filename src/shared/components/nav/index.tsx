@@ -1,22 +1,8 @@
-import { faImages, faMap, faFutbol } from "@fortawesome/free-regular-svg-icons";
-import {
-  faBook,
-  faHome,
-  IconDefinition,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/constants";
 
 import "./nav.scss";
 import { CommandBar, ICommandBarItemProps } from "@fluentui/react";
-
-interface navBarLink {
-  path: string;
-  icon?: IconDefinition;
-  zh: string;
-  en?: string;
-}
 
 const NavComponent = () => {
   const navigate = useNavigate();

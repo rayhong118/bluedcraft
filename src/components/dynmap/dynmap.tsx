@@ -1,5 +1,3 @@
-import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import "./dynmap.scss";
 import { Image, IImageProps, ImageFit } from "@fluentui/react";

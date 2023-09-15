@@ -1,23 +1,13 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { faSearch, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import { registerIcons } from '@fluentui/react/lib/Styling';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { initializeIcons } from '@fluentui/font-icons-mdl2';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { initializeIcons } from "@fluentui/font-icons-mdl2";
 
 initializeIcons();
 
-registerIcons({
-  icons: {
-    FaAngleLeft: <FontAwesomeIcon icon={faAngleLeft} />,
-    FaSearch: <FontAwesomeIcon icon={faSearch} />
-  }
-});
-
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = createRoot(container!); // createRoot(container!) if you use TypeScript
 root.render(
   <React.StrictMode>
