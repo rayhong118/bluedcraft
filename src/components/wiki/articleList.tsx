@@ -129,6 +129,11 @@ export const WikiData: WikiArticle[] = [
       title: "武器",
       description: "",
     },
+    {
+      id: 26,
+      title: "商店",
+      description: "",
+    },
     ]
   }, {
     catalog: "faq",
@@ -137,6 +142,11 @@ export const WikiData: WikiArticle[] = [
       {
         id: 50,
         title: "资源包",
+        description: "",
+      },
+      {
+        id: 51,
+        title: "聊天",
         description: "",
       },
     ]
