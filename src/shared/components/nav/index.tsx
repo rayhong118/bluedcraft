@@ -11,6 +11,7 @@ const NavComponent = () => {
     {
       key: "home",
       // iconProps: { iconName: "home" },
+      // TODO: when narrow screen, have a top bar for title and bottom bar for buttons
       id: "bluedcraft",
       text: "Bluedcraft 梦の世界",
       onClick: () => navigate("/"),
@@ -22,17 +23,16 @@ const NavComponent = () => {
       iconProps: { iconName: "BookAnswers" },
     },
     {
-      key: "dynmap",
-      text: "卫星地图",
-      onClick: () => navigate(ROUTES.DYNMAP),
-      iconProps: { iconName: "World" },
-      disabled: true,
-    },
-    {
       key: "gallery",
       text: "相册",
       onClick: () => navigate(ROUTES.GALLERY),
       iconProps: { iconName: "ImagePixel" },
+    },
+    {
+      key: "dynmap",
+      text: "卫星地图",
+      onClick: () => navigate(ROUTES.DYNMAP),
+      iconProps: { iconName: "World" },
       disabled: true,
     },
   ];
