@@ -1,14 +1,14 @@
 import "./App.scss";
 import NavComponent from "./shared/components/nav";
 import HomeComponent from "./components/home";
-import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import WikiComponent from "./components/wiki";
 import { ROUTES } from "./shared/constants/constants";
 import DynmapComponent from "./components/dynmap";
 import GalleryComponent from "./components/gallery";
 import GuideComponent from "./components/guide";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <BrowserRouter>
@@ -17,11 +17,11 @@ function App() {
         </div>
         <div className="app">
           <Routes>
-            <Route path="/" element={<HomeComponent />} />
-            <Route path={ROUTES.WIKI} element={<WikiComponent />} />
-            <Route path={ROUTES.DYNMAP} element={<DynmapComponent />} />
-            <Route path={ROUTES.GALLERY} element={<GalleryComponent />} />
-            <Route path={ROUTES.GUIDE} element={<GuideComponent />} />
+            <Route path="/" Component={HomeComponent} />
+            <Route path={ROUTES.WIKI} Component={WikiComponent} />
+            <Route path={ROUTES.DYNMAP} Component={DynmapComponent} />
+            <Route path={ROUTES.GALLERY} Component={GalleryComponent} />
+            <Route path={ROUTES.GUIDE} Component={GuideComponent} />
           </Routes>
           {/* <FooterComponent /> */}
         </div>
@@ -31,6 +31,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
