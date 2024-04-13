@@ -1,0 +1,26 @@
+@use '../../shared/constants/constants.scss';
+
+
+
+.image-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+
+    .image-preview{
+        max-width: 100%;
+        min-width: 10rem;
+        flex-grow: 1;
+        flex-basis: 24%;
+    }
+}
+
+.image-panel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    
+}
