@@ -14,6 +14,8 @@ export const Gallery = () => {
     { description: "test image", src: "/imageAssets/gallery/tsf1.png" },
     { description: "test image", src: "/imageAssets/gallery/tsf2.png" },
     { description: "test image", src: "/imageAssets/gallery/tsf3.png" },
+    { description: "test image", src: "/imageAssets/gallery/xuecheng1.png" },
+    { description: "test image", src: "/imageAssets/gallery/xuecheng2.png" },
   ];
   const [showModal, { toggle: toggleShowModal }] = useBoolean(false);
   const [selectedImageIndex, setSelectedImageIndex] = React.useState<number>(0);
@@ -35,7 +37,7 @@ export const Gallery = () => {
             className="image-preview"
             loading="lazy"
             src={image.src}
-            imageFit={ImageFit.contain}
+            imageFit={ImageFit.cover}
             onClick={() => {
               toggleShowModal();
               setSelectedImageIndex(index);
