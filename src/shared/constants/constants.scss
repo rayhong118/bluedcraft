@@ -19,5 +19,8 @@ $dark-gray: #414656;
 $main-content-max-width: 1200px;
 
 $mobile-desktop-breakpoint: 680px;
-$desktop-margin: 100px;
+$desktop-margin: 8rem;
 $mobile-margin: 2rem;
+
+$qhd-width: 2560px;
+$adaptive-side-spacing: max(calc(calc(100% - $qhd-width) / 2), #{$desktop-margin})

@@ -79,7 +79,6 @@
   }
 
   .list-of-feature {
-    margin: 1rem constants.$mobile-margin;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
@@ -126,7 +125,7 @@
       #pageTitle {
         position: absolute;
         top: 0%;
-        left: constants.$desktop-margin;
+        left: constants.$adaptive-side-spacing;
         height: $banner-height;
         display: flex;
         flex-direction: column;
@@ -148,7 +147,7 @@
         display: block;
         position: absolute;
         bottom: 0;
-        right: constants.$desktop-margin;
+        right: constants.$adaptive-side-spacing;
         color: white;
         text-shadow: 1px 1px 2px black;
         margin-bottom: 1rem;
@@ -183,7 +182,6 @@
     }
 
     .list-of-feature {
-      margin: 2rem constants.$desktop-margin;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;

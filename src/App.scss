@@ -69,8 +69,8 @@ body {
     margin-top: 4rem;
   }
   .adaptive-margin{
-    margin-left: constants.$desktop-margin;
-    margin-right: constants.$desktop-margin;
+    margin-left: constants.$adaptive-side-spacing;
+    margin-right: constants.$adaptive-side-spacing;
   }
   #topNav {
     z-index: 10;

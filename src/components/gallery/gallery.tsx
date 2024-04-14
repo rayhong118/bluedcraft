@@ -24,6 +24,7 @@ export const Gallery = () => {
     { description: "test image", src: "/imageAssets/gallery/yangfang5.png" },
     { description: "test image", src: "/imageAssets/gallery/yangfang6.png" },
     { description: "test image", src: "/imageAssets/gallery/yangfang7.png" },
+    { description: "test image", src: "/imageAssets/gallery/yangfang8.png" },
   ];
   const [showModal, { toggle: toggleShowModal }] = useBoolean(false);
   const [selectedImageIndex, setSelectedImageIndex] = React.useState<number>(0);

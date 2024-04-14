@@ -113,7 +113,7 @@ export const Home = () => {
         <h1>服务器特色</h1>
       </div>
 
-      <div className="list-of-feature">
+      <div className="list-of-feature adaptive-margin">
         <div className="feature">
           <img src="/imageAssets/ironchestplate_icon32.png" alt="vanilla" />
           <h2 className="title">原版生存</h2>
