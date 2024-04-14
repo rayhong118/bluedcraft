@@ -17,6 +17,13 @@ export const Gallery = () => {
     { description: "test image", src: "/imageAssets/gallery/tsf3.png" },
     { description: "test image", src: "/imageAssets/gallery/xuecheng1.png" },
     { description: "test image", src: "/imageAssets/gallery/xuecheng2.png" },
+    { description: "test image", src: "/imageAssets/gallery/yangfang1.png" },
+    { description: "test image", src: "/imageAssets/gallery/yangfang2.png" },
+    { description: "test image", src: "/imageAssets/gallery/yangfang3.png" },
+    { description: "test image", src: "/imageAssets/gallery/yangfang4.png" },
+    { description: "test image", src: "/imageAssets/gallery/yangfang5.png" },
+    { description: "test image", src: "/imageAssets/gallery/yangfang6.png" },
+    { description: "test image", src: "/imageAssets/gallery/yangfang7.png" },
   ];
   const [showModal, { toggle: toggleShowModal }] = useBoolean(false);
   const [selectedImageIndex, setSelectedImageIndex] = React.useState<number>(0);

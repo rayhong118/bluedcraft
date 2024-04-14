@@ -7,11 +7,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 0.25em;
+    gap: 1em;
 
     .image-preview{
         max-width: 100%;
-        min-width: 10rem;
+        min-width: 20rem;
         flex-grow: 1;
         flex-basis: 24%;
         transition: 0.5s;
