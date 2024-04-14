@@ -21,7 +21,7 @@ export const Wiki = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [wikiArticleId, setWikiArticleId] = useState<number>();
-  const faAngleLeft: IIconProps = { iconName: "FaAngleLeft" };
+  const faAngleLeft: IIconProps = { iconName: "back" };
 
   useEffect(() => {
     let pathName = location.pathname;

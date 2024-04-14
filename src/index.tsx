@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import App from "./App";
-import { initializeIcons } from "@fluentui/font-icons-mdl2";
+import { initializeIcons } from "@fluentui/react/lib/Icons";
 import ReactDOM from "react-dom";
 
 initializeIcons();
