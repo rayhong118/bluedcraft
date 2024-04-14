@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import FooterComponent from "../../shared/components/footer";
-import { DefaultButton, Icon, IconButton } from "@fluentui/react";
+import { IconButton } from "@fluentui/react";
 export const Home = () => {
   // use local storage to check if need to display newbie guide
   // user can manually dismiss the guide
