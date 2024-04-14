@@ -7,6 +7,9 @@ $theme-gradient-3: #00e7bd;
 $theme-gradient-4: #90f48a;
 $theme-gradient-5: #f9f871;
 
+$natural-1:#F4F9FF;
+$natural-2:#E6F4F1;
+
 $theme-shade-1: #0072dc;
 $theme-shade-2: #0055bb;
 $theme-shade-3: #003b9a;
@@ -19,8 +22,10 @@ $dark-gray: #414656;
 $main-content-max-width: 1200px;
 
 $mobile-desktop-breakpoint: 680px;
-$desktop-margin: 8rem;
-$mobile-margin: 2rem;
+$desktop-horizontal-margin: 8rem;
+$desktop-vertical-margin: 2rem;
+$mobile-horizontal-margin: 2rem;
+$mobile-vertical-margin: 2rem;
 
-$qhd-width: 2560px;
-$adaptive-side-spacing: max(calc(calc(100% - $qhd-width) / 2), #{$desktop-margin})
+$qhd-width: 1920px;
+$adaptive-side-spacing: max(calc(calc(100% - $qhd-width) / 2), #{$desktop-horizontal-margin})

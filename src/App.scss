@@ -37,14 +37,13 @@ body {
 // Mobile version stylesheet starts.
 
 .page {
-  margin-top: 1rem;
   height: 100%;
   //max-width: 1920px;
   padding-bottom: 4rem;
 }
 
 .adaptive-margin{
-  margin: 1rem constants.$mobile-margin;
+  margin: 1rem constants.$mobile-horizontal-margin;
 }
 
 #topNav {
@@ -66,7 +65,7 @@ body {
 
 @media (min-width: constants.$mobile-desktop-breakpoint) {
   .page {
-    margin-top: 4rem;
+    padding-top: 3rem;
   }
   .adaptive-margin{
     margin-left: constants.$adaptive-side-spacing;
