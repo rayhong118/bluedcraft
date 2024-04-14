@@ -1,15 +1,7 @@
 import * as React from "react";
 import { Image, ImageFit } from "@fluentui/react/lib/Image";
 import { useBoolean } from "@fluentui/react-hooks";
-import {
-  DefaultButton,
-  Dialog,
-  IIconProps,
-  Icon,
-  IconBase,
-  IconButton,
-  Modal,
-} from "@fluentui/react";
+import { IIconProps, IconButton, Modal } from "@fluentui/react";
 export const Gallery = () => {
   interface imageData {
     description: string;
@@ -19,8 +11,9 @@ export const Gallery = () => {
     { description: "test image", src: "/imageAssets/bg-main-0.png" },
     { description: "test image", src: "/imageAssets/bg-main-1.png" },
     { description: "test image", src: "/imageAssets/bg-main-3.jpg" },
-    { description: "test image", src: "/imageAssets/bg-main-0.png" },
-    { description: "test image", src: "/imageAssets/bg-main-0.png" },
+    { description: "test image", src: "/imageAssets/gallery/tsf1.png" },
+    { description: "test image", src: "/imageAssets/gallery/tsf2.png" },
+    { description: "test image", src: "/imageAssets/gallery/tsf3.png" },
   ];
   const [showModal, { toggle: toggleShowModal }] = useBoolean(false);
   const [selectedImageIndex, setSelectedImageIndex] = React.useState<number>(0);
@@ -53,10 +46,6 @@ export const Gallery = () => {
 
       <Modal isOpen={showModal} onDismiss={toggleShowModal}>
         <div className="image-panel">
-          {/* <DefaultButton
-            iconProps={buttonLeftProps}
-            onClick={() => console.log("shit")}
-          /> */}
           <IconButton
             className="gallery-nav-button"
             iconProps={buttonLeftProps}
@@ -66,7 +55,7 @@ export const Gallery = () => {
 
           <Image
             loading="lazy"
-            shouldFadeIn={true}
+            shouldFadeIn={false}
             src={imageList[selectedImageIndex]?.src}
             imageFit={ImageFit.contain}
             onClick={toggleShowModal}
@@ -77,8 +66,6 @@ export const Gallery = () => {
             disabled={selectedImageIndex === imageList.length - 1}
             onClick={() => setSelectedImageIndex(selectedImageIndex + 1)}
           />
-
-          {/* <DefaultButton iconProps={buttonRightProps} /> */}
         </div>
       </Modal>
     </div>

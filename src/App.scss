@@ -33,9 +33,11 @@ body {
 //   }
 // }
 
-//most pages should have similar style
+// most pages should have similar style.
+// Mobile version stylesheet starts.
+
 .page {
-  margin-top: 4rem;
+  margin-top: 1rem;
   height: 100%;
   max-width: 1920px;
   padding-bottom: 4rem;
@@ -57,6 +59,10 @@ body {
   display: block;
   background-color: white;
 }
+
+// Mobile version stylesheet ends.
+
+// Regular version stylesheet starts. 
 
 @media (min-width: constants.$mobile-desktop-breakpoint) {
   .page {
