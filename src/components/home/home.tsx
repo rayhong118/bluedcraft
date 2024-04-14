@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import FooterComponent from "../../shared/components/footer";
+import { DefaultButton, Icon, IconButton } from "@fluentui/react";
 export const Home = () => {
   // use local storage to check if need to display newbie guide
   // user can manually dismiss the guide
@@ -29,6 +30,12 @@ export const Home = () => {
   useEffect(() => {
     setRandomImage();
   }, []);
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    alert("复制成功");
+  };
+
   return (
     <div id="homePage" className="page">
       <div className="banner">
@@ -38,10 +45,26 @@ export const Home = () => {
           <h1>梦の世界</h1>
           <h2>认真|负责|友爱|公益</h2>
         </div>
+
         <div id="bannerImgDesc">
           <h3>{bannerImg.description}</h3>
         </div>
       </div>
+
+      <h3 className="adaptive-margin server-info">
+        体验服地址: mc.bluedcraft.com
+        <IconButton
+          iconProps={{ iconName: "copy" }}
+          onClick={() => copyToClipboard("mc.bluedcraft.com")}
+        ></IconButton>
+      </h3>
+      <h3 className="adaptive-margin server-info">
+        审核群(QQ): 336752653
+        <IconButton
+          iconProps={{ iconName: "copy" }}
+          onClick={() => copyToClipboard("336752653")}
+        ></IconButton>
+      </h3>
 
       <h1 className="paragraph">公益的心 永不改变</h1>
 
@@ -71,8 +94,6 @@ export const Home = () => {
           <h5 className="subtitle">紧张刺激的足球游戏</h5>
         </div>
       </div>
-
-      <FooterComponent />
     </div>
   );
 };

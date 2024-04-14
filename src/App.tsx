@@ -7,6 +7,7 @@ import { ROUTES } from "./shared/constants/constants";
 import DynmapComponent from "./components/dynmap";
 import GalleryComponent from "./components/gallery";
 import GuideComponent from "./components/guide";
+import FooterComponent from "./shared/components/footer";
 
 const App: React.FC = () => {
   return (
@@ -28,6 +29,7 @@ const App: React.FC = () => {
         <div id="bottomNav">
           <NavComponent />
         </div>
+        <FooterComponent />
       </BrowserRouter>
     </div>
   );

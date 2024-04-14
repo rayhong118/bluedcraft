@@ -8,6 +8,7 @@ export const Gallery = () => {
     src: string;
   }
   const imageList: imageData[] = [
+    { description: "test image", src: "/imageAssets/dynmap/background.png" },
     { description: "test image", src: "/imageAssets/bg-main-0.png" },
     { description: "test image", src: "/imageAssets/bg-main-1.png" },
     { description: "test image", src: "/imageAssets/bg-main-3.jpg" },

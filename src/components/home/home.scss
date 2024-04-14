@@ -168,9 +168,12 @@
       }
     }
 
+    .server-info{
+      color: constants.$theme-shade-4;
+    }
+
     .paragraph {
       padding: constants.$desktop-margin;
-      //color: constants.$theme-shade-2;
       background-color: constants.$light-gray;
     }
 
@@ -187,7 +190,7 @@
       grid-auto-rows: minmax(300px, auto);
 
       .feature {
-        border: 1px solid constants.$light-gray;
+        border: 1px solid constants.$theme-gradient-1;
       }
 
       img {
