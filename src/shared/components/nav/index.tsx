@@ -10,11 +10,16 @@ const NavComponent = () => {
   const items: ICommandBarItemProps[] = [
     {
       key: "home",
-      // iconProps: { iconName: "home" },
-      // TODO: when narrow screen, have a top bar for title and bottom bar for buttons
       id: "bluedcraft",
       text: "Bluedcraft 梦の世界",
       onClick: () => navigate("/"),
+    },
+    {
+      key: "home",
+      id: "bluedcraftMobile",
+      text: "梦の世界",
+      onClick: () => navigate("/"),
+      iconProps: { iconName: "home" },
     },
     {
       key: "wiki",
