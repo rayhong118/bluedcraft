@@ -12,12 +12,8 @@ const WikiComponent = () => {
     <div className="page adaptive-margin">
       <h2>Wiki 百科</h2>
       <div className="wiki-page ">
-        <div className="wiki-nav">
-          <WikiNav listOfArticles={WikiData} />
-        </div>
-        <div className="wiki-list">
-          <Wiki />
-        </div>
+        <WikiNav listOfArticles={WikiData} />
+        <Wiki />
       </div>
     </div>
   );

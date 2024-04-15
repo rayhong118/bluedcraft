@@ -45,7 +45,7 @@ export const Wiki = () => {
     );
   else
     return (
-      <div className="wiki-container">
+      <div className="wiki-container wiki-list">
         {
           <DefaultButton
             iconProps={faAngleLeft}

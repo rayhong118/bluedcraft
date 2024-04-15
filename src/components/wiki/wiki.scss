@@ -1,5 +1,6 @@
 @use '../../shared/constants/constants.scss';
 
+// mobile
 .wiki-page {
   display: flex;
   justify-content: center;
@@ -60,9 +61,7 @@
     gap: 2rem;
 
     .wiki-nav {
-      margin-top: 2rem;
       display: block;
-      min-width: 300px;
     }
   }
 

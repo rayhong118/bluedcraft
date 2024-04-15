@@ -73,7 +73,7 @@ export const WikiNav: React.FC<ListOfArticlesProps> = ({ listOfArticles }) => {
   }
 
   return (
-    <div>
+    <div className="wiki-nav">
       <SearchBox
         placeholder="Search"
         styles={navStyles}

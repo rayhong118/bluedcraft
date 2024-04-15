@@ -8,6 +8,8 @@
     position: relative;
     width: 100%;
     height: $banner-height;
+    color: white;
+    text-shadow: 1px 1px 2px black;
 
     img {
       width: 100%;
@@ -23,16 +25,10 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      color: white;
-      text-shadow: 1px 1px 2px black;
 
       h1 {
-        font-size: 2.5rem;
-      }
-
-      h2 {
-        margin-top: 0;
-        margin-bottom: 1rem;
+        font-size: 4em;
+        line-height: 1em;
       }
     }
 
@@ -45,15 +41,19 @@
     padding: constants.$mobile-horizontal-margin;
     text-align: center;
     background-color: constants.$natural-2;
+    text-wrap: none;
   }
+  
   .server-intro{
     line-height: 2rem;
+    color: constants.$theme-shade-4;
   }
 
   .list-of-points {
     background-color: constants.$natural-1;
     margin: constants.$desktop-vertical-margin 0;
     padding: 1rem 0;
+    line-height: 2rem;
   }
 
   #featureListTitle {
@@ -70,7 +70,7 @@
     .feature {
       display: flex;
       flex-direction: column;
-      border: 1px solid constants.$light-gray;
+      border: 1px solid constants.$theme-gradient-1;
     }
 
     img {
@@ -78,11 +78,7 @@
       image-rendering: pixelated !important;
     }
 
-    .title {
-      text-align: center;
-    }
-
-    .subtitle {
+    .title, .subtitle{
       text-align: center;
     }
   }
@@ -90,7 +86,7 @@
 
 @media (min-width: constants.$mobile-desktop-breakpoint) {
   #homePage {
-    $banner-height: calc(min(100vw, 1920px) / 3);
+    $banner-height: calc(min(50vh, 50em) );
 
     .banner {
       position: relative;
@@ -98,31 +94,9 @@
       height: $banner-height;
       overflow: hidden;
 
-      img {
-        width: 100%;
-        height: $banner-height;
-        object-fit: cover;
-      }
-
       #pageTitle {
-        position: absolute;
-        top: 0%;
         left: constants.$adaptive-side-spacing;
         height: $banner-height;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        color: white;
-        text-shadow: 1px 1px 2px black;
-
-        h1 {
-          font-size: 4rem;
-        }
-
-        h2 {
-          margin-top: 0;
-          margin-bottom: 1rem;
-        }
       }
 
       #bannerImgDesc {
@@ -130,34 +104,8 @@
         position: absolute;
         bottom: 0;
         right: constants.$adaptive-side-spacing;
-        color: white;
-        text-shadow: 1px 1px 2px black;
         margin-bottom: 1rem;
       }
-    }
-
-    .server-info{
-      color: constants.$theme-shade-4;
-    }
-
-    .paragraph {
-      padding: constants.$desktop-vertical-margin;
-      background-color: constants.$natural-2;
-    }
-
-    .server-intro{
-      line-height: 2rem;
-    }
-
-    .list-of-points {
-      background-color: constants.$natural-1;
-      margin: constants.$desktop-vertical-margin 0;
-      padding: 1rem 0;
-    }
-
-    #featureListTitle {
-      display: grid;
-      place-items: center;
     }
 
     .list-of-feature {
@@ -165,23 +113,6 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
       grid-auto-rows: minmax(300px, auto);
-
-      .feature {
-        border: 1px solid constants.$theme-gradient-1;
-      }
-
-      img {
-        box-sizing: content-box;
-        image-rendering: pixelated !important;
-      }
-
-      .title {
-        text-align: center;
-      }
-
-      .subtitle {
-        text-align: center;
-      }
     }
   }
 }
