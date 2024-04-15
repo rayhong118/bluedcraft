@@ -44,7 +44,7 @@
   .paragraph {
     padding: constants.$mobile-horizontal-margin;
     text-align: center;
-    background-color: constants.$light-gray;
+    background-color: constants.$natural-2;
   }
   .server-intro{
     line-height: 2rem;
@@ -53,6 +53,7 @@
   .list-of-points {
     background-color: constants.$natural-1;
     margin: constants.$desktop-vertical-margin 0;
+    padding: 1rem 0;
   }
 
   #featureListTitle {
@@ -141,7 +142,7 @@
 
     .paragraph {
       padding: constants.$desktop-vertical-margin;
-      background-color: constants.$light-gray;
+      background-color: constants.$natural-2;
     }
 
     .server-intro{
@@ -151,6 +152,7 @@
     .list-of-points {
       background-color: constants.$natural-1;
       margin: constants.$desktop-vertical-margin 0;
+      padding: 1rem 0;
     }
 
     #featureListTitle {
