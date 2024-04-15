@@ -38,7 +38,7 @@ export const Gallery = () => {
     styles: { root: { fontWeight: "bold", fontSize: "2rem" } },
   };
   return (
-    <div className="adaptive-margin">
+    <>
       <h2>Gallery 相册</h2>
       <div className="image-list">
         {imageList.map((image, index) => (
@@ -79,6 +79,6 @@ export const Gallery = () => {
           />
         </div>
       </Modal>
-    </div>
+    </>
   );
 };
