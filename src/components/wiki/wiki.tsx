@@ -46,16 +46,14 @@ export const Wiki = () => {
   else
     return (
       <div className="wiki-container wiki-list">
-        {
-          <DefaultButton
-            iconProps={faAngleLeft}
-            text="返回"
-            onClick={() => {
-              navigate(-1);
-            }}
-            allowDisabledFocus
-          />
-        }
+        <DefaultButton
+          iconProps={faAngleLeft}
+          text="返回"
+          onClick={() => {
+            navigate(-1);
+          }}
+          allowDisabledFocus
+        />
         <Article article={wikiArticleId} />
       </div>
     );
