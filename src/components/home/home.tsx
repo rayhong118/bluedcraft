@@ -99,9 +99,8 @@ export const Home = () => {
         <h1>公益的心 永不改变</h1>
       </div>
 
-      <div className="adaptive-margin ">
+      <div className="adaptive-margin bilibili-iframe">
         <iframe
-          className="bilibili-iframe"
           title="Server intro video"
           src="//player.bilibili.com/player.html?aid=871979890&bvid=BV1CV4y1e7LA&cid=1224386065&p=1&autoPlay=false"
           scrolling="no"
