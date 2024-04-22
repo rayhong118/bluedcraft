@@ -2,7 +2,7 @@
 
 #homePage {
   height: 100%;
-  $banner-height: 60vh;
+  $banner-height: 97vh;
 
   .banner {
     position: relative;
@@ -26,10 +26,21 @@
       flex-direction: column;
       justify-content: flex-end;
 
+      button {
+        margin-bottom: 4rem;
+      }
+
       h1 {
         font-size: 4em;
         line-height: 1em;
       }
+    }
+
+    #more {
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
     }
 
     #bannerImgDesc {
@@ -96,7 +107,7 @@
 
 @media (min-width: constants.$mobile-desktop-breakpoint) {
   #homePage {
-    $banner-height: calc(min(50vh, 50em) );
+    $banner-height: calc(min(97vh, 97em) );
 
     .banner {
       position: relative;

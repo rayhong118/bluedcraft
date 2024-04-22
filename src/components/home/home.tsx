@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { IconButton } from "@fluentui/react";
+import { IconButton, DefaultButton, PrimaryButton, Dialog, DialogFooter } from "@fluentui/react";
+import { useBoolean } from '@fluentui/react-hooks';
 export const Home = () => {
   // use local storage to check if need to display newbie guide
   // user can manually dismiss the guide
@@ -35,6 +36,13 @@ export const Home = () => {
     alert("复制成功");
   };
 
+  const goAnchor = (index: string) => {
+    if (index)
+      document.querySelector(index)?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
+
   return (
     <div id="homePage" className="page">
       <div className="banner">
@@ -43,29 +51,40 @@ export const Home = () => {
         <div id="pageTitle">
           <h1>梦の世界</h1>
           <h2>认真|负责|友爱|公益</h2>
+          <PrimaryButton text="加入我们" onClick={toggleHideDialog} />
+          <Dialog
+            hidden={hideDialog}
+            onDismiss={toggleHideDialog}
+            modalProps={{ isBlocking: false }}
+          >
+            <h3 className=" server-info">
+              体验服地址: mc.bluedcraft.com
+              <IconButton
+                iconProps={{ iconName: "copy" }}
+                onClick={() => copyToClipboard("mc.bluedcraft.com")}
+              ></IconButton>
+            </h3>
+            <h3 className="server-info">
+              审核群(QQ): 336752653
+              <IconButton
+                iconProps={{ iconName: "copy" }}
+                onClick={() => copyToClipboard("336752653")}
+              ></IconButton>
+            </h3>
+            <DialogFooter>
+              <DefaultButton onClick={toggleHideDialog} text="关闭" />
+            </DialogFooter>
+          </Dialog>
         </div>
-
+        <div id="more" onClick={() => { goAnchor("#more-anchor"); }}>
+          ↓了解更多
+        </div>
         <div id="bannerImgDesc">
           <h3>{bannerImg.description}</h3>
         </div>
       </div>
 
-      <h3 className="adaptive-margin server-info">
-        体验服地址: mc.bluedcraft.com
-        <IconButton
-          iconProps={{ iconName: "copy" }}
-          onClick={() => copyToClipboard("mc.bluedcraft.com")}
-        ></IconButton>
-      </h3>
-      <h3 className="adaptive-margin server-info">
-        审核群(QQ): 336752653
-        <IconButton
-          iconProps={{ iconName: "copy" }}
-          onClick={() => copyToClipboard("336752653")}
-        ></IconButton>
-      </h3>
-
-      <div className="paragraph">
+      <div id='more-anchor' className="paragraph">
         <h1>公益的心 永不改变</h1>
       </div>
 
@@ -89,7 +108,7 @@ export const Home = () => {
           <ul>
             <li>
               <strong>稳定：</strong>
-              至今为止，我们已经开服11年。服主的宗旨是“地球在服务器就在”，我们将会开服到永远！
+              至今为止，我们已经开服12年。服务器的宗旨是“地球在服务器就在”，我们将会开服到永远！
             </li>
             <li>
               <strong>公益：</strong>
