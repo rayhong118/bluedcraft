@@ -15,7 +15,7 @@ const NavComponent = () => {
       onClick: () => navigate("/"),
     },
     {
-      key: "home",
+      key: "home_moblie",
       id: "bluedcraftMobile",
       text: "梦の世界",
       onClick: () => navigate("/"),
