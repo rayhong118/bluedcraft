@@ -43,6 +43,16 @@
     background-color: constants.$natural-2;
     text-wrap: none;
   }
+
+  .bilibili-iframe{
+    display: flex;
+    justify-content: space-around;
+
+    iframe{
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+  }
   
   .server-intro{
     line-height: 2rem;

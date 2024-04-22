@@ -69,6 +69,17 @@ export const Home = () => {
         <h1>公益的心 永不改变</h1>
       </div>
 
+      <div className="adaptive-margin bilibili-iframe">
+        <iframe
+          className="adaptive-margin"
+          title="Server intro video"
+          src="//player.bilibili.com/player.html?aid=871979890&bvid=BV1CV4y1e7LA&cid=1224386065&p=1&autoPlay=false"
+          scrolling="no"
+          frameBorder="no"
+          allowFullScreen={true}
+        ></iframe>
+      </div>
+
       <div className="adaptive-margin">
         <div className="server-intro">
           梦の世界成立于2012年7月28日，我们以认真、负责、友爱和公益为目标来维护服务器。虽然服务器成立以来经历了一些坎坷，但没有什么困难能阻挡我们前进的脚步。我们拥有严格的管理制度，为有素质的玩家们提供良好的游戏环境。从未出现，也永远不会出现滥用权限的管理！我们向你保证，服务器的玩家都具备高素质，而且零熊孩子。
