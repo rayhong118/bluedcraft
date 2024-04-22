@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
-import { IconButton, DefaultButton, PrimaryButton, Dialog, DialogFooter } from "@fluentui/react";
-import { useBoolean } from '@fluentui/react-hooks';
+import {
+  IconButton,
+  DefaultButton,
+  PrimaryButton,
+  Dialog,
+  DialogFooter,
+} from "@fluentui/react";
+import { useBoolean } from "@fluentui/react-hooks";
 export const Home = () => {
   // use local storage to check if need to display newbie guide
   // user can manually dismiss the guide
@@ -39,7 +45,7 @@ export const Home = () => {
   const goAnchor = (index: string) => {
     if (index)
       document.querySelector(index)?.scrollIntoView({ behavior: "smooth" });
-  }
+  };
 
   const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
 
@@ -76,7 +82,12 @@ export const Home = () => {
             </DialogFooter>
           </Dialog>
         </div>
-        <div id="more" onClick={() => { goAnchor("#more-anchor"); }}>
+        <div
+          id="more"
+          onClick={() => {
+            goAnchor("#more-anchor");
+          }}
+        >
           ↓了解更多
         </div>
         <div id="bannerImgDesc">
@@ -84,13 +95,13 @@ export const Home = () => {
         </div>
       </div>
 
-      <div id='more-anchor' className="paragraph">
+      <div id="more-anchor" className="paragraph">
         <h1>公益的心 永不改变</h1>
       </div>
 
-      <div className="adaptive-margin bilibili-iframe">
+      <div className="adaptive-margin ">
         <iframe
-          className="adaptive-margin"
+          className="bilibili-iframe"
           title="Server intro video"
           src="//player.bilibili.com/player.html?aid=871979890&bvid=BV1CV4y1e7LA&cid=1224386065&p=1&autoPlay=false"
           scrolling="no"

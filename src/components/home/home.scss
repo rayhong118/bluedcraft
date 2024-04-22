@@ -60,11 +60,9 @@
   .bilibili-iframe{
     display: flex;
     justify-content: space-around;
+    width: 100%;
+    aspect-ratio: 16/9;
 
-    iframe{
-      width: 100%;
-      aspect-ratio: 16/9;
-    }
   }
   
   .server-intro{
