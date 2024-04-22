@@ -41,6 +41,8 @@
       position: absolute;
       bottom: 0;
       width: 100%;
+      text-shadow: none;
+      background: linear-gradient(transparent,rgba(128, 128, 128,0.5));
     }
 
     #bannerImgDesc {

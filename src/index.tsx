@@ -2,7 +2,6 @@ import React from "react";
 import "./index.css";
 import App from "./App";
 import { initializeIcons } from "@fluentui/react/lib/Icons";
-import ReactDOM from "react-dom";
 import { createRoot } from 'react-dom/client';
 
 initializeIcons();
