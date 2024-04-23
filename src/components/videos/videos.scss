@@ -1,0 +1,22 @@
+@use '../../shared/constants/constants.scss';
+
+.videos-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
+
+    .video-tile{
+        max-width: 100%;
+        min-width: max-content;
+        flex-grow: 1;
+        flex-basis: 48%;
+        transition: 0.5s;
+
+        iframe{
+            width: 100%;
+            aspect-ratio: 16/9;
+          }
+    }
+}

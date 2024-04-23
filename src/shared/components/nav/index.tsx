@@ -34,12 +34,18 @@ const NavComponent = () => {
       iconProps: { iconName: "ImagePixel" },
     },
     {
-      key: "dynmap",
-      text: "卫星地图",
-      onClick: () => navigate(ROUTES.DYNMAP),
-      iconProps: { iconName: "World" },
-      disabled: true,
+      key: "videos",
+      text: "视频",
+      onClick: () => navigate(ROUTES.VIDEOS),
+      iconProps: { iconName: "Video" },
     },
+    // {
+    //   key: "dynmap",
+    //   text: "卫星地图",
+    //   onClick: () => navigate(ROUTES.DYNMAP),
+    //   iconProps: { iconName: "World" },
+    //   disabled: true,
+    // },
   ];
 
   return <CommandBar items={items} className="nav-component"></CommandBar>;
