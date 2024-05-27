@@ -101,6 +101,7 @@
 }
 
 /* custom recipe page */
-.custom-recipe-page {
-  
+.custom-recipe {
+  .output {display: flex; flex-direction: column; justify-content: space-evenly;}
+  .input{ display: flex;}
 }

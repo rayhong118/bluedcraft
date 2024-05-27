@@ -1,9 +1,9 @@
-import { CustomRecipes } from "./customRecipes";
+import { CustomRecipe } from "./customRecipes";
 
 export interface WikiArticle {
   id: number;
   name: string;
-  component?: React.JSX.Element;
+  customRecipeData?: CustomRecipe[];
 }
 
 interface WikiArticleGroup {
@@ -27,7 +27,7 @@ export const ListOfArticles: WikiArticleGroup[] = [
       {
         id: 1,
         name: "特殊物品合成",
-        component: CustomRecipes(),
+        customRecipeData: [],
       },
     ],
   },

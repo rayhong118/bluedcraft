@@ -4,6 +4,7 @@ import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import { WikiContext } from "./context";
 import { ArticleArray } from "./articleList";
+import { CustomRecipes } from "./customRecipes";
 
 export const Article: React.FC = () => {
   const { selectedArticleId } = useContext(WikiContext);
@@ -20,7 +21,8 @@ export const Article: React.FC = () => {
         setArticle(text);
       });
   }, [selectedArticleId]);
-  if (selectedArticle?.component) return selectedArticle.component;
+  if (selectedArticle?.customRecipeData)
+    return CustomRecipes(selectedArticle.customRecipeData);
   return (
     <>
       <ReactMarkdown

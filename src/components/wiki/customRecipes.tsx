@@ -10,30 +10,31 @@ export interface CustomRecipe {
   output: RecipeItem;
 }
 
-const customRecipeData: CustomRecipe[] = [
-  {
-    input: [
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ],
-    output: { name: "outputName", imgSrc: "" },
-  },
-];
-export const CustomRecipes = () => {
+// const customRecipeData: CustomRecipe[] = [
+//   {
+//     input: [
+//       undefined,
+//       undefined,
+//       undefined,
+//       undefined,
+//       undefined,
+//       undefined,
+//       undefined,
+//       undefined,
+//       undefined,
+//     ],
+//     output: { name: "outputName", imgSrc: "" },
+//   },
+// ];
+
+export const CustomRecipes = (customRecipeData: CustomRecipe[]) => {
   return (
     <>
       <table>
         {customRecipeData.map((customRecipeDatum) => {
           return (
-            <tr>
-              <td>
+            <tr className="custom-recipe">
+              <td className="output">
                 {customRecipeDatum.output.name}
                 <img
                   src={customRecipeDatum.output.imgSrc}
@@ -51,7 +52,7 @@ export const CustomRecipes = () => {
 
 const customRecipeInput = (customRecipeInput: RecipeItem[] | undefined[]) => {
   return (
-    <td>
+    <td className="input">
       {customRecipeInput.map((item, index) => {
         return (
           <TooltipHost content={item?.name}>
