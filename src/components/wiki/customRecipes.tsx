@@ -11,7 +11,20 @@ export interface CustomRecipe {
 }
 
 const customRecipeData: CustomRecipe[] = [
-  { input: [undefined], output: { name: "outputName", imgSrc: "" } },
+  {
+    input: [
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+    ],
+    output: { name: "outputName", imgSrc: "" },
+  },
 ];
 export const CustomRecipes = () => {
   return (
@@ -27,7 +40,7 @@ export const CustomRecipes = () => {
                   alt={customRecipeDatum.output.name}
                 />
               </td>
-              <td>{customRecipeInput(customRecipeDatum.input)}</td>
+              {customRecipeInput(customRecipeDatum.input)}
             </tr>
           );
         })}
@@ -42,7 +55,7 @@ const customRecipeInput = (customRecipeInput: RecipeItem[] | undefined[]) => {
       {customRecipeInput.map((item, index) => {
         return (
           <TooltipHost content={item?.name}>
-            {item ? <img src={item.imgSrc} alt={item.name} /> : <div />}
+            {item ? <img src={item.imgSrc} alt={item.name} /> : <span />}
           </TooltipHost>
         );
       })}

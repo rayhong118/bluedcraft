@@ -1,3 +1,5 @@
+import { CustomRecipes } from "./customRecipes";
+
 export interface WikiArticle {
   id: number;
   name: string;
@@ -21,6 +23,11 @@ export const ListOfArticles: WikiArticleGroup[] = [
       {
         id: 30,
         name: "权限组",
+      },
+      {
+        id: 1,
+        name: "特殊物品合成",
+        component: CustomRecipes(),
       },
     ],
   },
@@ -133,3 +140,10 @@ export const ListOfArticles: WikiArticleGroup[] = [
     ],
   },
 ];
+const createArticleArray = () => {
+  const result: WikiArticle[] = [];
+  ListOfArticles.forEach((group) => result.push(...group.articles));
+  return result;
+};
+
+export const ArticleArray = createArticleArray();
