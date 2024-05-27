@@ -1,25 +1,26 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
+import { WikiContext } from "./context";
 
-interface ArticleProps {
-  article: number;
-}
-
-export const Article: React.FC<ArticleProps> = ({ article }) => {
-  const [shit, setShit] = useState<string>("");
+export const Article: React.FC = () => {
+  const { selectedArticleId } = useContext(WikiContext);
+  const [article, setArticle] = useState<string>("");
   useEffect(() => {
-    let path = `/wikiArticles/${article}.md`;
+    let path = `/wikiArticles/${selectedArticleId}.md`;
     fetch(path)
       .then((response) => response.text())
       .then((text) => {
-        setShit(text);
+        setArticle(text);
       });
-  }, [article]);
+  }, [selectedArticleId]);
   return (
     <>
-      <ReactMarkdown rehypePlugins={[rehypeRaw, remarkGfm]} children={shit} />
+      <ReactMarkdown
+        rehypePlugins={[rehypeRaw, remarkGfm]}
+        children={article}
+      />
     </>
   );
 };

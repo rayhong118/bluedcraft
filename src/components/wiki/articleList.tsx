@@ -1,154 +1,135 @@
-import { WikiArticle } from "./wiki";
+export interface WikiArticle {
+  id: number;
+  name: string;
+  component?: React.JSX.Element;
+}
 
-export const WikiData: WikiArticle[] = [
+interface WikiArticleGroup {
+  id: number;
+  name: string;
+  articles: WikiArticle[];
+}
+export const ListOfArticles: WikiArticleGroup[] = [
   {
-    catalog: "basic",
-    title: "基础",
-    list: [
-      {
-        id: 2,
-        title: "建筑师考核",
-        description: "关于建筑师等级和各级考核要求",
-      },
+    id: 0,
+    name: "基础 - 新人指引",
+    articles: [
       {
         id: 3,
-        title: "基础指令",
-        description: "",
-        content: `",`,
+        name: "基础指令",
       },
       {
         id: 30,
-        title: "权限组",
-        description: "",
-        content: `",`,
+        name: "权限组",
       },
-    ]
+    ],
   },
   {
-    catalog: "economy",
-    title: "经济",
-    list: [{
-      id: 40,
-      title: "玩家交易货物",
-      description: "创建玩家店铺",
-    },
-    {
-      id: 41,
-      title: "官方收购价格",
-      description: "",
-    },
-    {
-      id: 42,
-      title: "税收",
-      description: "",
-    },
-    ]
+    id: 1,
+    name: "经济",
+    articles: [
+      {
+        id: 40,
+        name: "玩家交易货物",
+      },
+      {
+        id: 41,
+        name: "官方收购价格",
+      },
+      {
+        id: 42,
+        name: "税收",
+      },
+    ],
   },
   {
-    catalog: "area",
-    title: "城镇及地区",
-    list: [{
-      id: 4,
-      title: "洛卡",
-      description: "城镇详细介绍",
-    },
-    {
-      id: 5,
-      title: "羊坊",
-      description: "城镇详细介绍",
-    },
-    {
-      id: 6,
-      title: "雪城",
-      description: "城镇详细介绍",
-    },
-    {
-      id: 7,
-      title: "蓝星",
-      description: "城镇详细介绍",
-    },
-    {
-      id: 8,
-      title: "彩云",
-      description: "城镇详细介绍",
-    },
-    {
-      id: 9,
-      title: "时雨",
-      description: "城镇详细介绍",
-    },
-    {
-      id: 10,
-      title: "矿界-普顿",
-      description: "地区详细介绍",
-    },
-    {
-      id: 11,
-      title: "平川",
-      description: "地区详细介绍",
-    },
-    {
-      id: 12,
-      title: "瓦兰",
-      description: "地区详细介绍",
-    }
-    ]
+    id: 2,
+    name: "城镇及地区",
+    articles: [
+      {
+        id: 4,
+        name: "洛卡",
+      },
+      {
+        id: 5,
+        name: "羊坊",
+      },
+      {
+        id: 6,
+        name: "雪城",
+      },
+      {
+        id: 7,
+        name: "蓝星",
+      },
+      {
+        id: 8,
+        name: "彩云",
+      },
+      {
+        id: 9,
+        name: "时雨",
+      },
+      {
+        id: 10,
+        name: "矿界-普顿",
+      },
+      {
+        id: 11,
+        name: "平川",
+      },
+      {
+        id: 12,
+        name: "瓦兰",
+      },
+    ],
   },
   {
-    catalog: "function",
-    title: "功能",
-    list: [{
-      id: 20,
-      title: "卡片",
-      description: "",
-      content: "访问 http://help.bluedcraft.com/plugin/",
-    },
-    {
-      id: 21,
-      title: "烹饪",
-      description: "",
-      content: "访问 http://help.bluedcraft.com/plugin/",
-    },
-    {
-      id: 22,
-      title: "载具",
-      description: "",
-    },
-    {
-      id: 23,
-      title: "装备",
-      description: "",
-    },
-    {
-      id: 24,
-      title: "唱片",
-      description: "MIDI唱片",
-    },
-    {
-      id: 25,
-      title: "武器",
-      description: "",
-    },
-    {
-      id: 26,
-      title: "商店",
-      description: "",
-    },
-    ]
-  }, {
-    catalog: "faq",
-    title: "FAQ",
-    list: [
+    id: 3,
+    name: "功能",
+    articles: [
+      {
+        id: 20,
+        name: "卡片",
+      },
+      {
+        id: 21,
+        name: "烹饪",
+      },
+      {
+        id: 22,
+        name: "载具",
+      },
+      {
+        id: 23,
+        name: "装备",
+      },
+      {
+        id: 24,
+        name: "唱片",
+      },
+      {
+        id: 25,
+        name: "武器",
+      },
+      {
+        id: 26,
+        name: "商店",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "FAQ",
+    articles: [
       {
         id: 50,
-        title: "资源包",
-        description: "",
+        name: "资源包",
       },
       {
         id: 51,
-        title: "聊天",
-        description: "",
+        name: "聊天",
       },
-    ]
-  }
+    ],
+  },
 ];

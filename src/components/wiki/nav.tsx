@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SearchBox } from "@fluentui/react/lib/SearchBox";
 import {
   Nav,
@@ -7,8 +7,10 @@ import {
   INavLink,
 } from "@fluentui/react/lib/Nav";
 import { IIconProps } from "@fluentui/react/lib/Icon";
-import { WikiArticle } from "./wiki";
-import { useNavigate, useLocation } from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
+import { ListOfArticles } from "./articleList";
+import { WikiContext } from "./context";
 
 const navStyles: Partial<INavStyles> = {
   root: { width: "100%", position: "relative", marginLeft: "auto" },
@@ -20,30 +22,27 @@ const searchIcon: IIconProps = {
 
 const navLinkGroups: INavLinkGroup[] = [];
 
-interface ListOfArticlesProps {
-  listOfArticles: WikiArticle[];
-}
-
-export const WikiNav: React.FC<ListOfArticlesProps> = ({ listOfArticles }) => {
+export const WikiNav = () => {
   const [linkGroups = [], setLinkGroups] = useState<INavLinkGroup[]>();
-  const navigate = useNavigate();
   const location = useLocation();
+
+  const listOfArticles = ListOfArticles;
 
   useState(() => {
     if (navLinkGroups.length === 0) {
       listOfArticles.forEach((data) => {
         let links: INavLink[] = [];
-        data.list.forEach((element) => {
+        data.articles.forEach((article) => {
           links.push({
-            key: "nav" + element.id,
-            name: element.title,
-            url: `${data.catalog}/${element.id}`,
+            key: "nav" + article.id,
+            name: article.name,
+            url: `${article.id}`,
           });
         });
         let group = {
-          name: data.title,
-          expandAriaLabel: `Expand ${data.catalog} section`,
-          collapseAriaLabel: `Collapse ${data.catalog} section`,
+          name: data.name,
+          expandAriaLabel: `Expand ${data.id} section`,
+          collapseAriaLabel: `Collapse ${data.id} section`,
           links: links,
         };
         navLinkGroups.push(group);
@@ -72,6 +71,7 @@ export const WikiNav: React.FC<ListOfArticlesProps> = ({ listOfArticles }) => {
     }
   }
 
+  const { setSelectedArticleId } = useContext(WikiContext);
   return (
     <div className="wiki-nav">
       <SearchBox
@@ -85,9 +85,9 @@ export const WikiNav: React.FC<ListOfArticlesProps> = ({ listOfArticles }) => {
         styles={navStyles}
         ariaLabel="Nav"
         groups={linkGroups}
-        onLinkClick={(e, event) => {
+        onLinkClick={(e, item) => {
           e?.preventDefault();
-          if (event) navigate(event.url);
+          if (item?.url) setSelectedArticleId(item?.url);
         }}
       />
     </div>
