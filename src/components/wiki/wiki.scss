@@ -57,6 +57,7 @@
 }
 
 @media (min-width: constants.$mobile-desktop-breakpoint) {
+  .nav-panel-button{ display: none;}
   .wiki-page {
     display: flex;
     gap: 2rem;
@@ -64,6 +65,7 @@
     .wiki-nav {
       display: block;
     }
+    .nav-panel {display: none;}
   }
 
   .wiki-container {
