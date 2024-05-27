@@ -16,7 +16,7 @@ const navStyles: Partial<INavStyles> = {
   root: { width: "100%", position: "relative", marginLeft: "auto" },
 };
 const searchIcon: IIconProps = {
-  iconName: "FaSearch",
+  iconName: "search",
   styles: { root: { color: "#333" } },
 };
 
