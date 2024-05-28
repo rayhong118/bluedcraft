@@ -6,7 +6,7 @@ export interface WikiArticle {
   customRecipeData?: CustomRecipe[];
 }
 
-interface WikiArticleGroup {
+export interface WikiArticleGroup {
   id: number;
   name: string;
   articles: WikiArticle[];

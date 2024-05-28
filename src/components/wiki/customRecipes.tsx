@@ -6,7 +6,7 @@ interface RecipeItem {
 }
 
 export interface CustomRecipe {
-  input: RecipeItem[] | undefined[];
+  input: (RecipeItem | undefined)[];
   output: RecipeItem;
 }
 
@@ -50,7 +50,7 @@ export const CustomRecipes = (customRecipeData: CustomRecipe[]) => {
   );
 };
 
-const customRecipeInput = (customRecipeInput: RecipeItem[] | undefined[]) => {
+const customRecipeInput = (customRecipeInput: (RecipeItem| undefined) []) => {
   return (
     <td className="input">
       {customRecipeInput.map((item, index) => {
