@@ -24,7 +24,6 @@ export const Article: React.FC = () => {
   if (selectedArticle?.customRecipeData)
     return CustomRecipes(selectedArticle.customRecipeData);
   return (
-    <>
       <ReactMarkdown
         rehypePlugins={[rehypeRaw, remarkGfm]}
         children={article}
@@ -37,17 +36,16 @@ export const Article: React.FC = () => {
               return [kv[0], kv[1]];
             }));
             const items = content.map((item: string, i: number) => {
-              return item == " " ? <div key={i} className={`item-${i + 1}`} /> : <img key={i} className={`item-${i + 1}`} src={`/imageAssets/wiki/items/${index.get(item)}.png`} />;
+              return item == " " ? <span key={i} className={`item-${i + 1}`} /> : <img key={i} className={`item-${i + 1}`} src={`/imageAssets/wiki/items/${index.get(item)}.png`} />;
             });
             return (
-              <div className="wiki-recipe">
+              <span className="wiki-recipe">
                 {items}
                 <img className="result" src={`/imageAssets/wiki/items/${props.result}.png`} />
-              </div>
+              </span>
             );
           },
         }}
       />
-    </>
   );
 };
