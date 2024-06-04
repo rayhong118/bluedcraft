@@ -32,7 +32,7 @@
 .wiki-sign {
   padding: 0;
   list-style: none;
-  background: url("../../../public/imageAssets/wiki/style/blank_sign.png");
+  background: url("/imageAssets/wiki/style/blank_sign.png");
   width: 192px;
   height: 96px;
 
@@ -40,6 +40,40 @@
     font-size: 16px;
     text-align: center;
     height: 24px;
+  }
+}
+
+.wiki-recipe {
+  position: relative;
+  background: url("/imageAssets/wiki/style/crafting_table.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  width: 348px;
+  height: 176px;
+
+
+  $count : 0;
+  @for $y from 1 through 3 {
+    @for $x from 1 through 3 {
+      $count : $count + 1;
+      .item-#{$count} {
+        position: absolute;
+        top:  $y * 35px;
+        left: 25px + $x * 36px;
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  .result {
+    position: absolute;
+    top: 62px;
+    right: 60px;
+    width: 48px;
+    height: 48px;
   }
 }
 

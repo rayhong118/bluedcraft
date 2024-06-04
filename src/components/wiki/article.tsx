@@ -28,6 +28,25 @@ export const Article: React.FC = () => {
       <ReactMarkdown
         rehypePlugins={[rehypeRaw, remarkGfm]}
         children={article}
+        components={{
+          // @ts-ignore
+          recipe: (props) => {
+            let content: string[] = Array.from(props.content.replace(/\|/g, ""));
+            let index = new Map<string, string>(props.index.split("|").map((item: string) => {
+              let kv = item.split(":");
+              return [kv[0], kv[1]];
+            }));
+            const items = content.map((item: string, i: number) => {
+              return item == " " ? <div key={i} className={`item-${i + 1}`} /> : <img key={i} className={`item-${i + 1}`} src={`/imageAssets/wiki/items/${index.get(item)}.png`} />;
+            });
+            return (
+              <div className="wiki-recipe">
+                {items}
+                <img className="result" src={`/imageAssets/wiki/items/${props.result}.png`} />
+              </div>
+            );
+          },
+        }}
       />
     </>
   );
