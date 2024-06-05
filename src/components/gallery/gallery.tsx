@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Image, ImageFit } from "@fluentui/react/lib/Image";
-import { useBoolean } from "@fluentui/react-hooks";
-import { IIconProps, IconButton, Modal } from "@fluentui/react";
+import { Image, Button, Dialog, DialogSurface, DialogBody, DialogContent } from "@fluentui/react-components";
+import { ArrowLeftRegular, ArrowRightRegular } from "@fluentui/react-icons"
 export const Gallery = () => {
   interface imageData {
     description: string;
@@ -26,17 +25,9 @@ export const Gallery = () => {
     { description: "test image", src: "/imageAssets/gallery/yangfang7.png" },
     { description: "test image", src: "/imageAssets/gallery/yangfang8.png" },
   ];
-  const [showModal, { toggle: toggleShowModal }] = useBoolean(false);
   const [selectedImageIndex, setSelectedImageIndex] = React.useState<number>(0);
+  const [open, setOpen] = React.useState(false);
 
-  const buttonLeftProps: IIconProps = {
-    iconName: "back",
-    styles: { root: { fontWeight: "bold", fontSize: "2rem" } },
-  };
-  const buttonRightProps: IIconProps = {
-    iconName: "forward",
-    styles: { root: { fontWeight: "bold", fontSize: "2rem" } },
-  };
   return (
     <>
       <h2>Gallery 相册</h2>
@@ -46,39 +37,41 @@ export const Gallery = () => {
             className="image-preview"
             loading="lazy"
             src={image.src}
-            imageFit={ImageFit.cover}
+            fit="cover"
             onClick={() => {
-              toggleShowModal();
+              setOpen(true);
               setSelectedImageIndex(index);
             }}
           />
         ))}
       </div>
 
-      <Modal isOpen={showModal} onDismiss={toggleShowModal}>
-        <div className="image-panel">
-          <IconButton
-            className="gallery-nav-button"
-            iconProps={buttonLeftProps}
-            disabled={!selectedImageIndex}
-            onClick={() => setSelectedImageIndex(selectedImageIndex - 1)}
-          />
-
-          <Image
-            loading="lazy"
-            shouldFadeIn={false}
-            src={imageList[selectedImageIndex]?.src}
-            imageFit={ImageFit.contain}
-            onClick={toggleShowModal}
-          />
-          <IconButton
-            className="gallery-nav-button"
-            iconProps={buttonRightProps}
-            disabled={selectedImageIndex === imageList.length - 1}
-            onClick={() => setSelectedImageIndex(selectedImageIndex + 1)}
-          />
-        </div>
-      </Modal>
+      <Dialog open={open} onOpenChange={(event, data) => setOpen(data.open)}>
+        <DialogSurface>
+          <DialogBody>
+            <div className="image-panel">
+              <Button
+                className="gallery-nav-button"
+                icon={<ArrowLeftRegular />}
+                disabled={!selectedImageIndex}
+                onClick={() => setSelectedImageIndex(selectedImageIndex - 1)}
+              />
+              <Image
+                loading="lazy"
+                src={imageList[selectedImageIndex]?.src}
+                fit="contain"
+                onClick={() => setOpen(false)}
+              />
+              <Button
+                className="gallery-nav-button"
+                icon={<ArrowRightRegular />}
+                disabled={selectedImageIndex === imageList.length - 1}
+                onClick={() => setSelectedImageIndex(selectedImageIndex + 1)}
+              />
+            </div>
+          </DialogBody>
+        </DialogSurface>
+      </Dialog>
     </>
   );
 };
