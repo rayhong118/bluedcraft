@@ -1,107 +1,95 @@
-import React, { useContext, useEffect, useState } from "react";
-import { SearchBox, SearchBoxChangeEvent, InputOnChangeData, makeStyles, tokens } from "@fluentui/react-components";
+import { useContext, useEffect, useState } from "react";
+import { SearchBox } from "@fluentui/react/lib/SearchBox";
 import {
-  NavCategory,
-  NavCategoryItem,
-  NavDrawer,
-  NavDrawerBody,
-  NavSubItem,
-  NavSubItemGroup,
-} from "@fluentui/react-nav-preview";
+  Nav,
+  INavStyles,
+  INavLinkGroup,
+  INavLink,
+} from "@fluentui/react/lib/Nav";
+import { IIconProps } from "@fluentui/react/lib/Icon";
 
 import { useLocation } from "react-router-dom";
-import { ListOfArticles, WikiArticleGroup, WikiArticle } from "./articleList";
+import { ListOfArticles } from "./articleList";
 import { WikiContext } from "./context";
 
-const useStyles = makeStyles({
-  nav: {
-    backgroundColor: tokens.colorNeutralBackground3,
-    width: "100%",
-    height: "100%",
-    position: "relative",
-    marginLeft: "auto"
-  },
-})
+const navStyles: Partial<INavStyles> = {
+  root: { width: "100%", position: "relative", marginLeft: "auto" },
+};
+const searchIcon: IIconProps = {
+  iconName: "search",
+  styles: { root: { color: "#333" } },
+};
+
+const navLinkGroups: INavLinkGroup[] = [];
 
 export const WikiNav = () => {
-  const [listOfArticles = ListOfArticles, setListOfArticles] = useState<WikiArticleGroup[]>();
+  const [linkGroups = [], setLinkGroups] = useState<INavLinkGroup[]>();
   const location = useLocation();
 
+  const listOfArticles = ListOfArticles;
+
+  useState(() => {
+    if (navLinkGroups.length === 0) {
+      listOfArticles.forEach((data) => {
+        let links: INavLink[] = [];
+        data.articles.forEach((article) => {
+          links.push({
+            key: "nav" + article.id,
+            name: article.name,
+            url: `${article.id}`,
+          });
+        });
+        let group = {
+          name: data.name,
+          expandAriaLabel: `Expand ${data.id} section`,
+          collapseAriaLabel: `Collapse ${data.id} section`,
+          links: links,
+        };
+        navLinkGroups.push(group);
+      });
+    }
+  });
+
   useEffect(() => {
-    setListOfArticles(ListOfArticles);
+    setLinkGroups(navLinkGroups);
   }, [location.pathname]);
 
   function searchArticle(
-    event?: SearchBoxChangeEvent,
-    data?: InputOnChangeData
+    event?: React.ChangeEvent<HTMLInputElement>,
+    key?: string
   ) {
-    if (data) {
-      let linkGroups: WikiArticle[] = [];
-      let groups: WikiArticleGroup[] = []
-      ListOfArticles.forEach((group) => {
-        let flag = false;
-        group.articles.forEach((link) => {
-          if (link.name.indexOf(data.value) >= 0) {
-            flag = true;
-            linkGroups.push(link);
-          }
+    if (key) {
+      let linkGroups: INavLink[] = [];
+      navLinkGroups.forEach((group) => {
+        group.links.forEach((link) => {
+          if (link.name.indexOf(key) >= 0) linkGroups.push(link);
         });
-        if(flag){
-          groups.push({
-            id: group.id,
-            name: group.name,
-            articles: linkGroups
-          })
-        }
       });
-      setListOfArticles(groups);
+      setLinkGroups([{ links: linkGroups }]);
     } else {
-      setListOfArticles(ListOfArticles);
+      setLinkGroups(navLinkGroups);
     }
   }
 
   const { setSelectedArticleId } = useContext(WikiContext);
-  const styles = useStyles();
   return (
     <div className="wiki-nav">
       <SearchBox
         placeholder="Search"
-        appearance="underline"
+        styles={navStyles}
         onChange={searchArticle}
+        iconProps={searchIcon}
+        underlined={true}
       />
-      <NavDrawer
-        className={styles.nav}
-        open={true}
-        type="inline"
-        onNavItemSelect={(e, item) => {
+      <Nav
+        styles={navStyles}
+        ariaLabel="Nav"
+        groups={linkGroups}
+        onLinkClick={(e, item) => {
           e?.preventDefault();
-          if (item?.value) setSelectedArticleId(item?.value.toString());
+          if (item?.url) setSelectedArticleId(item?.url);
         }}
-      >
-        <NavDrawerBody>
-          {
-            listOfArticles.map((data) => {
-              return (
-                <React.Fragment>
-                  <NavCategory key={data.id} value={data.id}>
-                    <NavCategoryItem>
-                      {data.name}
-                    </NavCategoryItem>
-                    <NavSubItemGroup>
-                      {data.articles.map((article) => {
-                        return (
-                          <NavSubItem key={"nav" + article.id} value={`${article.id}`}>{article.name}</NavSubItem>
-                        )
-                      })}
-                    </NavSubItemGroup>
-                  </NavCategory>
-                </React.Fragment>
-              )
-            })
-          }
-        </NavDrawerBody>
-
-      </NavDrawer>
+      />
     </div>
   );
 };

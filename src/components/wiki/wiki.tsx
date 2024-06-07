@@ -14,7 +14,6 @@ export const Wiki = () => {
   if (selectedArticleId === "")
     return (
       <div className="wiki-container">
-        <h2>Wiki 百科</h2>
         <IndexOfArticles listOfArticles={ListOfArticles} />
       </div>
     );

@@ -1,14 +1,14 @@
 import "./dynmap.scss";
-import { Image, ImageProps } from "@fluentui/react-components";
+import { Image, IImageProps, ImageFit } from "@fluentui/react";
 export const Dynmap = () => {
-  const backgroundImageProps: ImageProps = {
-    fit: "cover",
+  const backgroundImageProps: IImageProps = {
+    imageFit: ImageFit.cover,
     src: "/imageAssets/dynmap/background.png",
   };
 
   return (
     <div className="page dynmap-page">
-      <Image  {...backgroundImageProps} />
+      <Image {...backgroundImageProps} />
       {/* <iframe
         src="http://mc.bluedcraft.com:2333/login.html"
         title="Bluedcraft Server Map"

@@ -1,4 +1,4 @@
-import { Tooltip  } from "@fluentui/react-components";
+import { TooltipHost } from "@fluentui/react";
 
 interface RecipeItem {
   name: string;
@@ -55,9 +55,9 @@ const customRecipeInput = (customRecipeInput: (RecipeItem| undefined) []) => {
     <td className="input">
       {customRecipeInput.map((item, index) => {
         return (
-          <Tooltip content={item?.name || ""} relationship={"label"}>
+          <TooltipHost content={item?.name}>
             {item ? <img src={item.imgSrc} alt={item.name} /> : <span />}
-          </Tooltip>
+          </TooltipHost>
         );
       })}
     </td>
