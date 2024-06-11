@@ -123,6 +123,10 @@ export const ListOfArticles: WikiArticleGroup[] = [
         id: 26,
         name: "商店",
       },
+      {
+        id: 27,
+        name: "捕捉",
+      },
     ],
   },
   {
