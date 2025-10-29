@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Dynmap } from "./dynmap";
+import { Dynmap } from "./dynmap.js";
 
 const DynmapComponent = () => {
   useEffect(() => {

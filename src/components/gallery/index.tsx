@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Gallery } from "./gallery";
+import { Gallery } from "./gallery.js";
 import "./gallery.scss";
 
 const GalleryComponent = () => {

@@ -1,8 +1,8 @@
-import { Wiki } from "./wiki";
-import { WikiNav } from "./nav";
+import { Wiki } from "./wiki.js";
+import { WikiNav } from "./nav.js";
 import "./wiki.scss";
 import { useEffect, useState } from "react";
-import { WikiContext } from "./context";
+import { WikiContext } from "./context.js";
 import { useBoolean } from "@fluentui/react-hooks";
 import { DefaultButton, Panel } from "@fluentui/react";
 

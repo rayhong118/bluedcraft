@@ -1,8 +1,8 @@
-import { Article } from "./article";
+import { Article } from "./article.js";
 import { useContext } from "react";
-import { IndexOfArticles } from "./indexOfArticles";
-import { ListOfArticles } from "./articleList";
-import { WikiContext } from "./context";
+import { IndexOfArticles } from "./indexOfArticles.js";
+import { ListOfArticles } from "./articleList.js";
+import { WikiContext } from "./context.js";
 
 export interface IWikiContext {
   selectedArticleId: number;

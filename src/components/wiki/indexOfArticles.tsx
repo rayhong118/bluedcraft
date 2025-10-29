@@ -1,9 +1,9 @@
 import { IStackTokens, Stack } from "@fluentui/react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import Card from "../../shared/components/card/card";
-import { WikiArticleGroup } from "./articleList";
-import { WikiContext } from "./context";
+import Card from "../../shared/components/card/card.js";
+import { WikiArticleGroup } from "./articleList.js";
+import { WikiContext } from "./context.js";
 
 interface ListOfArticlesProps {
   listOfArticles: WikiArticleGroup[];

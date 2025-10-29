@@ -1,14 +1,14 @@
 import "./App.scss";
-import NavComponent from "./shared/components/nav";
-import HomeComponent from "./components/home";
+import NavComponent from "./shared/components/nav/index.js";
+import HomeComponent from "./components/home/index.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import WikiComponent from "./components/wiki";
-import { ROUTES } from "./shared/constants/constants";
-import DynmapComponent from "./components/dynmap";
-import GalleryComponent from "./components/gallery";
-import GuideComponent from "./components/guide";
-import FooterComponent from "./shared/components/footer";
-import { VideosComponent } from "./components/videos";
+import WikiComponent from "./components/wiki/index.js";
+import { ROUTES } from "./shared/constants/constants.js";
+import DynmapComponent from "./components/dynmap/index.js";
+import GalleryComponent from "./components/gallery/index.js";
+import GuideComponent from "./components/guide/index.js";
+import FooterComponent from "./shared/components/footer/index.js";
+import { VideosComponent } from "./components/videos/index.js";
 
 const App: React.FC = () => {
   return (

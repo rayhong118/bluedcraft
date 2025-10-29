@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Videos } from "./videos";
+import { Videos } from "./videos.js";
 import "./videos.scss";
 
 export const VideosComponent = () => {

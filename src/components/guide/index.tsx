@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Guide } from "./guide";
+import { Guide } from "./guide.js";
 import "./guide.scss";
 
 const GuideComponent = () => {

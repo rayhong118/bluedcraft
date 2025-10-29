@@ -9,8 +9,8 @@ import {
 import { IIconProps } from "@fluentui/react/lib/Icon";
 
 import { useLocation } from "react-router-dom";
-import { ListOfArticles } from "./articleList";
-import { WikiContext } from "./context";
+import { ListOfArticles } from "./articleList.js";
+import { WikiContext } from "./context.js";
 
 const navStyles: Partial<INavStyles> = {
   root: { width: "100%", position: "relative", marginLeft: "auto" },

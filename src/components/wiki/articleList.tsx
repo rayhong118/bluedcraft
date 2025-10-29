@@ -1,4 +1,4 @@
-import { CustomRecipe } from "./customRecipes";
+import { CustomRecipe } from "./customRecipes.js";
 
 export interface WikiArticle {
   id: number;

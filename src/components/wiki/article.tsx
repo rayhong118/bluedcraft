@@ -2,9 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
-import { WikiContext } from "./context";
-import { ArticleArray } from "./articleList";
-import { CustomRecipes } from "./customRecipes";
+import { WikiContext } from "./context.js";
+import { ArticleArray } from "./articleList.js";
+import { CustomRecipes } from "./customRecipes.js";
 
 export const Article: React.FC = () => {
   const { selectedArticleId } = useContext(WikiContext);
