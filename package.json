@@ -55,5 +55,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "unplugin-imagemin": "^0.6.9",
+    "vite-plugin-compression2": "^2.3.1"
   }
 }
