@@ -35,7 +35,7 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && node scripts/convert-dist.js",
     "preview": "vite preview"
   },
   "eslintConfig": {
@@ -57,6 +57,9 @@
     ]
   },
   "devDependencies": {
+    "globby": "^15.0.0",
+    "imagemin": "^9.0.1",
+    "imagemin-webp": "^8.0.0",
     "unplugin-imagemin": "^0.6.9",
     "vite-plugin-compression2": "^2.3.1"
   }

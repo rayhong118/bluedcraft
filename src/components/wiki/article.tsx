@@ -36,12 +36,12 @@ export const Article: React.FC = () => {
               return [kv[0], kv[1]];
             }));
             const items = content.map((item: string, i: number) => {
-              return item == " " ? <span key={i} className={`item-${i + 1}`} /> : <img key={i} className={`item-${i + 1}`} src={`/imageAssets/wiki/items/${index.get(item)}.png`} />;
+              return item == " " ? <span key={i} className={`item-${i + 1}`} /> : <picture><source srcSet={`/imageAssets/wiki/items/${index.get(item)}.webp`} type="image/webp" /><img key={i} className={`item-${i + 1}`} src={`/imageAssets/wiki/items/${index.get(item)}.png`} /></picture>;
             });
             return (
               <span className="wiki-recipe">
                 {items}
-                <img className="result" src={`/imageAssets/wiki/items/${props.result}.png`} />
+                <picture><source srcSet={`/imageAssets/wiki/items/${props.result}.webp`} type="image/webp" /><img className="result" src={`/imageAssets/wiki/items/${props.result}.png`} /></picture>
               </span>
             );
           },

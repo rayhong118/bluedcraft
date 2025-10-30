@@ -29,6 +29,10 @@ export const Gallery = () => {
   const [showModal, { toggle: toggleShowModal }] = useBoolean(false);
   const [selectedImageIndex, setSelectedImageIndex] = React.useState<number>(0);
 
+  const toWebp = (url: string) => {
+    return url.replace(/\.(png|jpe?g)$/i, '.webp');
+  };
+
   const buttonLeftProps: IIconProps = {
     iconName: "back",
     styles: { root: { fontWeight: "bold", fontSize: "2rem" } },
@@ -45,7 +49,7 @@ export const Gallery = () => {
           <Image
             className="image-preview"
             loading="lazy"
-            src={image.src}
+            src={toWebp(image.src)}
             imageFit={ImageFit.cover}
             onClick={() => {
               toggleShowModal();
@@ -63,11 +67,10 @@ export const Gallery = () => {
             disabled={!selectedImageIndex}
             onClick={() => setSelectedImageIndex(selectedImageIndex - 1)}
           />
-
           <Image
             loading="lazy"
             shouldFadeIn={false}
-            src={imageList[selectedImageIndex]?.src}
+            src={toWebp(imageList[selectedImageIndex]?.src)}
             imageFit={ImageFit.contain}
             onClick={toggleShowModal}
           />

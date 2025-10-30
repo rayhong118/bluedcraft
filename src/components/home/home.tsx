@@ -47,13 +47,16 @@ export const Home = () => {
       document.querySelector(index)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const toWebp = (url: string) => {
+    return url.replace(/\.(png|jpe?g)$/i, '.webp');
+  };
+
   const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
 
   return (
     <div id="homePage" className="page">
       <div className="banner">
-        <img src={bannerImg.url} alt={bannerImg.description} />
-
+        <picture><source srcSet={toWebp(bannerImg.url)} type="image/webp" /><img src={bannerImg.url} alt={bannerImg.description} /></picture>
         <div id="pageTitle">
           <h1>梦の世界</h1>
           <h2>认真|负责|友爱|公益</h2>
@@ -162,22 +165,19 @@ export const Home = () => {
 
       <div className="list-of-feature adaptive-margin">
         <div className="feature">
-          <img src="/imageAssets/ironchestplate_icon32.png" alt="vanilla" />
+          <picture><source srcSet="/imageAssets/ironchestplate_icon32.webp" type="image/webp" /><img src="/imageAssets/ironchestplate_icon32.png" alt="vanilla" /></picture>
           <h2 className="title">原版生存</h2>
           <h5 className="subtitle"> 一切都还是最原汁原味的样子</h5>
         </div>
         <div className="feature">
-          <img
-            src="/imageAssets/woodenaxe_icon32.png"
-            alt="construction team"
-          />
+          <picture><source srcSet="/imageAssets/woodenaxe_icon32.webp" type="image/webp" /><img src="/imageAssets/woodenaxe_icon32.png" alt="construction team" /></picture>
           <h2 className="title">高水平建筑团队</h2>
           <h5 className="subtitle">
             从现代城市，到古典村落，再到日式城堡，服务器的建筑团队期待你的加入
           </h5>
         </div>
         <div className="feature">
-          <img src="/imageAssets/fishingrod_icon32.png" alt="mini game" />
+          <picture><source srcSet="/imageAssets/fishingrod_icon32.webp" type="image/webp" /><img src="/imageAssets/fishingrod_icon32.png" alt="mini game" /></picture>
           <h2 className="title">小游戏</h2>
           <h5 className="subtitle">紧张刺激的足球游戏</h5>
         </div>
