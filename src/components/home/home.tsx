@@ -36,6 +36,8 @@ export const Home = () => {
     setBannerImg(listOfBannerImg[index]);
   };
 
+  const ServerYearCount = new Date().getFullYear() - 2012;
+
   useEffect(() => {
     setRandomImage();
   }, []);
@@ -55,7 +57,10 @@ export const Home = () => {
   return (
     <div id="homePage" className="page">
       <div className="banner">
-        <picture><source srcSet={toWebp(bannerImg.url)} type="image/webp" /><img src={bannerImg.url} alt={bannerImg.description} /></picture>
+        <picture>
+          <source srcSet={toWebp(bannerImg.url)} type="image/webp" />
+          <img src={bannerImg.url} alt={bannerImg.description} />
+        </picture>
         <div id="pageTitle">
           <h1>梦の世界</h1>
           <h2>认真|负责|友爱|公益</h2>
@@ -83,8 +88,17 @@ export const Home = () => {
             fullWidth
           >
             <DialogTitle sx={{ pb: 1, fontWeight: 600 }}>加入我们</DialogTitle>
-            <DialogContent dividers sx={{ display: "flex", flexDirection: "column", gap: 2, py: 2 }}>
-              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <DialogContent
+              dividers
+              sx={{ display: "flex", flexDirection: "column", gap: 2, py: 2 }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
                 <Typography variant="body1">
                   体验服地址: <strong>mc.bluedcraft.com</strong>
                 </Typography>
@@ -96,7 +110,13 @@ export const Home = () => {
                   <ContentCopyIcon fontSize="small" />
                 </IconButton>
               </Box>
-              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
                 <Typography variant="body1">
                   审核群(QQ): <strong>336752653</strong>
                 </Typography>
@@ -150,7 +170,8 @@ export const Home = () => {
           <ul>
             <li>
               <strong>稳定：</strong>
-              至今为止，我们已经开服12年。服务器的宗旨是“地球在服务器就在”，我们将会开服到永远！
+              至今为止，我们已经开服{ServerYearCount}
+              年。服务器的宗旨是“地球在服务器就在”，我们将会开服到永远！
             </li>
             <li>
               <strong>公益：</strong>
@@ -194,19 +215,40 @@ export const Home = () => {
 
       <div className="list-of-feature adaptive-margin">
         <div className="feature">
-          <picture><source srcSet={toWebp("/imageAssets/ironchestplate_icon32.png")} type="image/webp" /><img src="/imageAssets/ironchestplate_icon32.png" alt="vanilla" /></picture>
+          <picture>
+            <source
+              srcSet={toWebp("/imageAssets/ironchestplate_icon32.png")}
+              type="image/webp"
+            />
+            <img src="/imageAssets/ironchestplate_icon32.png" alt="vanilla" />
+          </picture>
           <h2 className="title">原版生存</h2>
           <h5 className="subtitle"> 一切都还是最原汁原味的样子</h5>
         </div>
         <div className="feature">
-          <picture><source srcSet={toWebp("/imageAssets/woodenaxe_icon32.png")} type="image/webp" /><img src="/imageAssets/woodenaxe_icon32.png" alt="construction team" /></picture>
+          <picture>
+            <source
+              srcSet={toWebp("/imageAssets/woodenaxe_icon32.png")}
+              type="image/webp"
+            />
+            <img
+              src="/imageAssets/woodenaxe_icon32.png"
+              alt="construction team"
+            />
+          </picture>
           <h2 className="title">高水平建筑团队</h2>
           <h5 className="subtitle">
             从现代城市，到古典村落，再到日式城堡，服务器的建筑团队期待你的加入
           </h5>
         </div>
         <div className="feature">
-          <picture><source srcSet={toWebp("/imageAssets/fishingrod_icon32.png")} type="image/webp" /><img src="/imageAssets/fishingrod_icon32.png" alt="mini game" /></picture>
+          <picture>
+            <source
+              srcSet={toWebp("/imageAssets/fishingrod_icon32.png")}
+              type="image/webp"
+            />
+            <img src="/imageAssets/fishingrod_icon32.png" alt="mini game" />
+          </picture>
           <h2 className="title">小游戏</h2>
           <h5 className="subtitle">紧张刺激的足球游戏</h5>
         </div>
