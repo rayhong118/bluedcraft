@@ -6,6 +6,12 @@ import { WikiContext } from "./context.js";
 import { ArticleArray } from "./articleList.js";
 import { CustomRecipes } from "./customRecipes.js";
 
+// In dev mode, .webp files don't exist in public/ — serve originals to avoid 404
+const toWebp = (url: string) => {
+  if (import.meta.env.DEV) return url;
+  return url.replace(/\.(png|jpe?g)$/i, ".webp");
+};
+
 export const Article: React.FC = () => {
   const { selectedArticleId } = useContext(WikiContext);
   const [article, setArticle] = useState<string>("");
@@ -28,6 +34,10 @@ export const Article: React.FC = () => {
         rehypePlugins={[rehypeRaw, remarkGfm]}
         children={article}
         components={{
+          // Transform all inline markdown images through toWebp() for production
+          img: ({ src, alt, ...rest }) => (
+            <img src={toWebp(src ?? "")} alt={alt} {...rest} />
+          ),
           // @ts-ignore
           recipe: (props) => {
             let content: string[] = Array.from(props.content.replace(/\|/g, ""));
@@ -36,12 +46,14 @@ export const Article: React.FC = () => {
               return [kv[0], kv[1]];
             }));
             const items = content.map((item: string, i: number) => {
-              return item == " " ? <span key={i} className={`item-${i + 1}`} /> : <picture><source srcSet={`/imageAssets/wiki/items/${index.get(item)}.webp`} type="image/webp" /><img key={i} className={`item-${i + 1}`} src={`/imageAssets/wiki/items/${index.get(item)}.png`} /></picture>;
+              const pngSrc = `/imageAssets/wiki/items/${index.get(item)}.png`;
+              return item == " " ? <span key={i} className={`item-${i + 1}`} /> : <picture key={i}><source srcSet={toWebp(pngSrc)} type="image/webp" /><img className={`item-${i + 1}`} src={pngSrc} /></picture>;
             });
+            const resultPng = `/imageAssets/wiki/items/${props.result}.png`;
             return (
               <span className="wiki-recipe">
                 {items}
-                <picture><source srcSet={`/imageAssets/wiki/items/${props.result}.webp`} type="image/webp" /><img className="result" src={`/imageAssets/wiki/items/${props.result}.png`} /></picture>
+                <picture><source srcSet={toWebp(resultPng)} type="image/webp" /><img className="result" src={resultPng} /></picture>
               </span>
             );
           },

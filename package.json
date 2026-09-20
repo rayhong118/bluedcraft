@@ -4,7 +4,10 @@
   "type": "module",
   "private": true,
   "dependencies": {
-    "@fluentui/react": "^8.125.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.4.0",
+    "@mui/material": "^9.4.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -58,8 +61,7 @@
   },
   "devDependencies": {
     "globby": "^15.0.0",
-    "imagemin": "^9.0.1",
-    "imagemin-webp": "^8.0.0",
+    "sharp": "^0.35.4",
     "unplugin-imagemin": "^0.6.9",
     "vite-plugin-compression2": "^2.3.1"
   }

@@ -1,5 +1,4 @@
-import imagemin from 'imagemin';
-import imageminWebp from 'imagemin-webp';
+import sharp from 'sharp';
 import { globby } from 'globby';
 import path from 'path';
 import fs from 'fs/promises';
@@ -9,10 +8,7 @@ async function convertPublicImages() {
 
   for (const file of files) {
     const buffer = await fs.readFile(file);
-
-    const webpBuffer = await imagemin.buffer(buffer, {
-      plugins: [imageminWebp()]
-    });
+    const webpBuffer = await sharp(buffer).webp().toBuffer();
 
     const relativePath = path.relative('dist/imageAssets', file);
     const webpPath = path.join('dist/imageAssets', relativePath).replace(/\.(png|jpg|jpeg)$/i, '.webp');
@@ -23,4 +19,4 @@ async function convertPublicImages() {
   }
 }
 
-convertPublicImages();
+convertPublicImages();

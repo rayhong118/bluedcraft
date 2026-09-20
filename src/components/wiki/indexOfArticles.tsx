@@ -1,6 +1,6 @@
-import { IStackTokens, Stack } from "@fluentui/react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
 import Card from "../../shared/components/card/card.js";
 import { WikiArticleGroup } from "./articleList.js";
 import { WikiContext } from "./context.js";
@@ -8,8 +8,6 @@ import { WikiContext } from "./context.js";
 interface ListOfArticlesProps {
   listOfArticles: WikiArticleGroup[];
 }
-
-const wrapStackTokens: IStackTokens = { childrenGap: 30 };
 
 export const IndexOfArticles: React.FC<ListOfArticlesProps> = ({
   listOfArticles,
@@ -20,23 +18,24 @@ export const IndexOfArticles: React.FC<ListOfArticlesProps> = ({
       {listOfArticles.map((article) => {
         return (
           <Card fluid key={`card${article.id}`} title={article.name}>
-            <Stack horizontal wrap tokens={wrapStackTokens} >
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
               {article.articles.map((item) => {
                 return (
                   <Link
                     className="link-to-article"
                     key={"article" + item.id}
-                    to={`${item.id}`} 
-                    onClick={(_)=>setSelectedArticleId(`${item.id}`)}
+                    to={`${item.id}`}
+                    onClick={(_) => setSelectedArticleId(`${item.id}`)}
                   >
                     {item.name}
                   </Link>
-                )
+                );
               })}
-            </Stack>
+            </Box>
           </Card>
         );
       })}
     </div>
   );
 };
+

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import {
-  IconButton,
-  DefaultButton,
-  PrimaryButton,
-  Dialog,
-  DialogFooter,
-} from "@fluentui/react";
-import { useBoolean } from "@fluentui/react-hooks";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 export const Home = () => {
   // use local storage to check if need to display newbie guide
   // user can manually dismiss the guide
@@ -48,10 +49,12 @@ export const Home = () => {
   };
 
   const toWebp = (url: string) => {
+    // In dev mode, .webp files don't exist in public/ — return original to avoid 404
+    if (import.meta.env.DEV) return url;
     return url.replace(/\.(png|jpe?g)$/i, '.webp');
   };
 
-  const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
+  const [openDialog, setOpenDialog] = useState(false);
 
   return (
     <div id="homePage" className="page">
@@ -60,29 +63,59 @@ export const Home = () => {
         <div id="pageTitle">
           <h1>梦の世界</h1>
           <h2>认真|负责|友爱|公益</h2>
-          <PrimaryButton text="加入我们" onClick={toggleHideDialog} />
-          <Dialog
-            hidden={hideDialog}
-            onDismiss={toggleHideDialog}
-            modalProps={{ isBlocking: false }}
+          <Button
+            variant="contained"
+            onClick={() => setOpenDialog(true)}
+            sx={{
+              backgroundColor: "#3390ff",
+              color: "#fff",
+              fontWeight: "bold",
+              fontSize: "1.1rem",
+              px: 4,
+              py: 1,
+              width: "fit-content",
+              mb: 8,
+              "&:hover": { backgroundColor: "#0072dc" },
+            }}
           >
-            <h3 className=" server-info">
-              体验服地址: mc.bluedcraft.com
-              <IconButton
-                iconProps={{ iconName: "copy" }}
-                onClick={() => copyToClipboard("mc.bluedcraft.com")}
-              ></IconButton>
-            </h3>
-            <h3 className="server-info">
-              审核群(QQ): 336752653
-              <IconButton
-                iconProps={{ iconName: "copy" }}
-                onClick={() => copyToClipboard("336752653")}
-              ></IconButton>
-            </h3>
-            <DialogFooter>
-              <DefaultButton onClick={toggleHideDialog} text="关闭" />
-            </DialogFooter>
+            加入我们
+          </Button>
+          <Dialog
+            open={openDialog}
+            onClose={() => setOpenDialog(false)}
+            maxWidth="xs"
+            fullWidth
+          >
+            <DialogTitle sx={{ pb: 1, fontWeight: 600 }}>加入我们</DialogTitle>
+            <DialogContent dividers sx={{ display: "flex", flexDirection: "column", gap: 2, py: 2 }}>
+              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <Typography variant="body1">
+                  体验服地址: <strong>mc.bluedcraft.com</strong>
+                </Typography>
+                <IconButton
+                  size="small"
+                  aria-label="copy server address"
+                  onClick={() => copyToClipboard("mc.bluedcraft.com")}
+                >
+                  <ContentCopyIcon fontSize="small" />
+                </IconButton>
+              </Box>
+              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <Typography variant="body1">
+                  审核群(QQ): <strong>336752653</strong>
+                </Typography>
+                <IconButton
+                  size="small"
+                  aria-label="copy qq group"
+                  onClick={() => copyToClipboard("336752653")}
+                >
+                  <ContentCopyIcon fontSize="small" />
+                </IconButton>
+              </Box>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={() => setOpenDialog(false)}>关闭</Button>
+            </DialogActions>
           </Dialog>
         </div>
         <div
@@ -165,19 +198,19 @@ export const Home = () => {
 
       <div className="list-of-feature adaptive-margin">
         <div className="feature">
-          <picture><source srcSet="/imageAssets/ironchestplate_icon32.webp" type="image/webp" /><img src="/imageAssets/ironchestplate_icon32.png" alt="vanilla" /></picture>
+          <picture><source srcSet={toWebp("/imageAssets/ironchestplate_icon32.png")} type="image/webp" /><img src="/imageAssets/ironchestplate_icon32.png" alt="vanilla" /></picture>
           <h2 className="title">原版生存</h2>
           <h5 className="subtitle"> 一切都还是最原汁原味的样子</h5>
         </div>
         <div className="feature">
-          <picture><source srcSet="/imageAssets/woodenaxe_icon32.webp" type="image/webp" /><img src="/imageAssets/woodenaxe_icon32.png" alt="construction team" /></picture>
+          <picture><source srcSet={toWebp("/imageAssets/woodenaxe_icon32.png")} type="image/webp" /><img src="/imageAssets/woodenaxe_icon32.png" alt="construction team" /></picture>
           <h2 className="title">高水平建筑团队</h2>
           <h5 className="subtitle">
             从现代城市，到古典村落，再到日式城堡，服务器的建筑团队期待你的加入
           </h5>
         </div>
         <div className="feature">
-          <picture><source srcSet="/imageAssets/fishingrod_icon32.webp" type="image/webp" /><img src="/imageAssets/fishingrod_icon32.png" alt="mini game" /></picture>
+          <picture><source srcSet={toWebp("/imageAssets/fishingrod_icon32.png")} type="image/webp" /><img src="/imageAssets/fishingrod_icon32.png" alt="mini game" /></picture>
           <h2 className="title">小游戏</h2>
           <h5 className="subtitle">紧张刺激的足球游戏</h5>
         </div>

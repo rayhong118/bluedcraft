@@ -1,4 +1,4 @@
-import { TooltipHost } from "@fluentui/react";
+import Tooltip from "@mui/material/Tooltip";
 
 interface RecipeItem {
   name: string;
@@ -10,56 +10,44 @@ export interface CustomRecipe {
   output: RecipeItem;
 }
 
-// const customRecipeData: CustomRecipe[] = [
-//   {
-//     input: [
-//       undefined,
-//       undefined,
-//       undefined,
-//       undefined,
-//       undefined,
-//       undefined,
-//       undefined,
-//       undefined,
-//       undefined,
-//     ],
-//     output: { name: "outputName", imgSrc: "" },
-//   },
-// ];
-
 export const CustomRecipes = (customRecipeData: CustomRecipe[]) => {
   return (
     <>
       <table>
-        {customRecipeData.map((customRecipeDatum) => {
-          return (
-            <tr className="custom-recipe">
-              <td className="output">
-                {customRecipeDatum.output.name}
-                <img
-                  src={customRecipeDatum.output.imgSrc}
-                  alt={customRecipeDatum.output.name}
-                />
-              </td>
-              {customRecipeInput(customRecipeDatum.input)}
-            </tr>
-          );
-        })}
+        <tbody>
+          {customRecipeData.map((customRecipeDatum, idx) => {
+            return (
+              <tr className="custom-recipe" key={`recipe-${idx}`}>
+                <td className="output">
+                  {customRecipeDatum.output.name}
+                  <img
+                    src={customRecipeDatum.output.imgSrc}
+                    alt={customRecipeDatum.output.name}
+                  />
+                </td>
+                {customRecipeInput(customRecipeDatum.input)}
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </>
   );
 };
 
-const customRecipeInput = (customRecipeInput: (RecipeItem| undefined) []) => {
+const customRecipeInput = (customRecipeInput: (RecipeItem | undefined)[]) => {
   return (
     <td className="input">
       {customRecipeInput.map((item, index) => {
         return (
-          <TooltipHost content={item?.name}>
-            {item ? <img src={item.imgSrc} alt={item.name} /> : <span />}
-          </TooltipHost>
+          <Tooltip key={index} title={item?.name || ""} arrow>
+            <span>
+              {item ? <img src={item.imgSrc} alt={item.name} /> : <span />}
+            </span>
+          </Tooltip>
         );
       })}
     </td>
   );
 };
+

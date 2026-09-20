@@ -3,41 +3,64 @@ import { WikiNav } from "./nav.js";
 import "./wiki.scss";
 import { useEffect, useState } from "react";
 import { WikiContext } from "./context.js";
-import { useBoolean } from "@fluentui/react-hooks";
-import { DefaultButton, Panel } from "@fluentui/react";
+import Button from "@mui/material/Button";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 const WikiComponent = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   const [selectedArticleId, setSelectedArticleId] = useState("");
-  const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] =
-    useBoolean(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
-    dismissPanel();
-    console.log(selectedArticleId);
+    setIsOpen(false);
   }, [selectedArticleId]);
 
   return (
     <WikiContext.Provider value={{ selectedArticleId, setSelectedArticleId }}>
       <div className="page adaptive-margin">
         <h2>Wiki 百科</h2>
-        <DefaultButton
+        <Button
+          variant="outlined"
           className="nav-panel-button"
-          text="目录"
-          onClick={openPanel}
-        />
+          onClick={() => setIsOpen(true)}
+          sx={{ mb: 2, textTransform: "none" }}
+        >
+          目录
+        </Button>
         <div className="wiki-page">
-          <Panel
-            className="nav-panel"
-            isLightDismiss
-            isOpen={isOpen}
-            onDismiss={dismissPanel}
-            closeButtonAriaLabel="Close"
-            headerText="百科目录"
+          <Drawer
+            anchor="left"
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+            slotProps={{
+              paper: {
+                sx: { width: 280, p: 2 },
+              },
+            }}
           >
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                mb: 1,
+              }}
+            >
+              <Typography variant="h6" sx={{ fontSize: "1.1rem", fontWeight: 600 }}>
+                百科目录
+              </Typography>
+              <IconButton size="small" onClick={() => setIsOpen(false)}>
+                <CloseIcon />
+              </IconButton>
+            </Box>
             <WikiNav />
-          </Panel>
+          </Drawer>
           <WikiNav />
           <Wiki />
         </div>
@@ -46,3 +69,4 @@ const WikiComponent = () => {
   );
 };
 export default WikiComponent;
+
