@@ -8,32 +8,34 @@ import DialogActions from "@mui/material/DialogActions";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+interface BannerImage {
+  url: string;
+  description: string;
+}
+
+const listOfBannerImg: BannerImage[] = [
+  { url: "/imageAssets/bg-main-0.png", description: "平川车站-服务器出生点" },
+  {
+    url: "/imageAssets/bg-main-1.png",
+    description: "平川-高雅雕塑-鸽民纪念广场",
+  },
+  { url: "/imageAssets/bg-main-3.jpg", description: "旧平川-现代城市" },
+];
+
+const toWebp = (url: string) => {
+  // In dev mode, .webp files don't exist in public/ — return original to avoid 404
+  if (import.meta.env.DEV) return url;
+  return url.replace(/\.(png|jpe?g)$/i, ".webp");
+};
+
 export const Home = () => {
-  // use local storage to check if need to display newbie guide
-  // user can manually dismiss the guide
-  //const bannerImgUrl = "/imageAssets/bg-main-3.jpg";
-
-  interface BannerImage {
-    url: string;
-    description: string;
-  }
-
-  // TODO: add a list of banner images
-  const listOfBannerImg: BannerImage[] = [
-    { url: "/imageAssets/bg-main-0.png", description: "平川车站-服务器出生点" },
-    {
-      url: "/imageAssets/bg-main-1.png",
-      description: "平川-高雅雕塑-鸽民纪念广场",
-    },
-    { url: "/imageAssets/bg-main-3.jpg", description: "旧平川-现代城市" },
-  ];
-
   const [bannerImg, setBannerImg] = useState<BannerImage>(listOfBannerImg[2]);
 
   const setRandomImage = () => {
     let index = Math.floor(Math.random() * listOfBannerImg.length);
     setBannerImg(listOfBannerImg[index]);
   };
+
   useEffect(() => {
     setRandomImage();
   }, []);
@@ -46,12 +48,6 @@ export const Home = () => {
   const goAnchor = (index: string) => {
     if (index)
       document.querySelector(index)?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const toWebp = (url: string) => {
-    // In dev mode, .webp files don't exist in public/ — return original to avoid 404
-    if (import.meta.env.DEV) return url;
-    return url.replace(/\.(png|jpe?g)$/i, '.webp');
   };
 
   const [openDialog, setOpenDialog] = useState(false);

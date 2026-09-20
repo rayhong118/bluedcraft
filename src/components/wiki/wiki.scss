@@ -13,20 +13,6 @@
 
 .wiki-container {
   width: 100%;
-  .wiki-search {
-    padding: 1rem 0;
-    display: flex;
-    align-items: center;
-
-    input {
-      flex-grow: 1;
-    }
-
-    input,
-    button {
-      padding: 0.25rem;
-    }
-  }
 }
 
 .wiki-sign {
@@ -107,30 +93,6 @@
 
     .wiki-nav {
       display: block;
-    }
-    .nav-panel {
-      display: none;
-    }
-  }
-
-  .wiki-container {
-    .wiki-search {
-      padding: 1rem 0;
-      display: block;
-
-      input,
-      button {
-        padding: 0.25rem;
-      }
-    }
-  }
-  #wikiNoResult {
-    padding: 1rem 0;
-    border-bottom: 2px solid constants.$theme-shade-3;
-
-    svg {
-      color: red;
-      margin-right: 1rem;
     }
   }
   .wiki-article-list {

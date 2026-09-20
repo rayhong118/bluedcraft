@@ -42,7 +42,7 @@
       bottom: 0;
       width: 100%;
       text-shadow: none;
-      background: linear-gradient(transparent,rgba(128, 128, 128,0.5));
+      background: linear-gradient(transparent, rgba(128, 128, 128, 0.5));
     }
 
     #bannerImgDesc {
@@ -54,7 +54,7 @@
     padding: constants.$mobile-horizontal-margin;
     text-align: center;
     background-color: constants.$natural-2;
-    text-wrap: none;
+    white-space: nowrap;
   }
 
   .bilibili-iframe{
@@ -118,7 +118,7 @@
 
 @media (min-width: constants.$mobile-desktop-breakpoint) {
   #homePage {
-    $banner-height: calc(min(97vh, 97em) );
+    $banner-height: min(97vh, 97em);
 
     .banner {
       position: relative;

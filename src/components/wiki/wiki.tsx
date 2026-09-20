@@ -4,10 +4,6 @@ import { IndexOfArticles } from "./indexOfArticles.js";
 import { ListOfArticles } from "./articleList.js";
 import { WikiContext } from "./context.js";
 
-export interface IWikiContext {
-  selectedArticleId: number;
-}
-
 export const Wiki = () => {
   const { selectedArticleId } = useContext(WikiContext);
   

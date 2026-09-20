@@ -26,7 +26,6 @@ const App: React.FC = () => {
             <Route path={ROUTES.GUIDE} Component={GuideComponent} />
             <Route path={ROUTES.VIDEOS} Component={VideosComponent} />
           </Routes>
-          {/* <FooterComponent /> */}
         </div>
         <div id="bottomNav">
           <NavComponent />

@@ -7,44 +7,45 @@ import CloseIcon from "@mui/icons-material/Close";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-export const Gallery = () => {
-  interface imageData {
-    description: string;
-    src: string;
-  }
-  const imageList: imageData[] = [
-    {
-      description: "服务器卫星地图背景",
-      src: "/imageAssets/dynmap/background.png",
-    },
-    {
-      description: "平川车站 — 服务器出生点",
-      src: "/imageAssets/bg-main-0.png",
-    },
-    { description: "平川 — 高雅雕塑广场", src: "/imageAssets/bg-main-1.png" },
-    { description: "旧平川 — 现代城市", src: "/imageAssets/bg-main-3.jpg" },
-    { description: "平川23 - 1", src: "/imageAssets/gallery/tsf1.png" },
-    { description: "平川23 - 2", src: "/imageAssets/gallery/tsf2.png" },
-    { description: "平川23 - 3", src: "/imageAssets/gallery/tsf3.png" },
-    { description: "雪城 1", src: "/imageAssets/gallery/xuecheng1.png" },
-    { description: "雪城 2", src: "/imageAssets/gallery/xuecheng2.png" },
-    { description: "羊坊 1", src: "/imageAssets/gallery/yangfang1.png" },
-    { description: "羊坊 2", src: "/imageAssets/gallery/yangfang2.png" },
-    { description: "羊坊 3", src: "/imageAssets/gallery/yangfang3.png" },
-    { description: "羊坊 4", src: "/imageAssets/gallery/yangfang4.png" },
-    { description: "羊坊 5", src: "/imageAssets/gallery/yangfang5.png" },
-    { description: "羊坊 6", src: "/imageAssets/gallery/yangfang6.png" },
-    { description: "羊坊 7", src: "/imageAssets/gallery/yangfang7.png" },
-    { description: "羊坊 8", src: "/imageAssets/gallery/yangfang8.png" },
-  ];
+interface ImageData {
+  description: string;
+  src: string;
+}
 
+const imageList: ImageData[] = [
+  {
+    description: "服务器卫星地图背景",
+    src: "/imageAssets/dynmap/background.png",
+  },
+  {
+    description: "平川车站 — 服务器出生点",
+    src: "/imageAssets/bg-main-0.png",
+  },
+  { description: "平川 — 高雅雕塑广场", src: "/imageAssets/bg-main-1.png" },
+  { description: "旧平川 — 现代城市", src: "/imageAssets/bg-main-3.jpg" },
+  { description: "平川23 - 1", src: "/imageAssets/gallery/tsf1.png" },
+  { description: "平川23 - 2", src: "/imageAssets/gallery/tsf2.png" },
+  { description: "平川23 - 3", src: "/imageAssets/gallery/tsf3.png" },
+  { description: "雪城 1", src: "/imageAssets/gallery/xuecheng1.png" },
+  { description: "雪城 2", src: "/imageAssets/gallery/xuecheng2.png" },
+  { description: "羊坊 1", src: "/imageAssets/gallery/yangfang1.png" },
+  { description: "羊坊 2", src: "/imageAssets/gallery/yangfang2.png" },
+  { description: "羊坊 3", src: "/imageAssets/gallery/yangfang3.png" },
+  { description: "羊坊 4", src: "/imageAssets/gallery/yangfang4.png" },
+  { description: "羊坊 5", src: "/imageAssets/gallery/yangfang5.png" },
+  { description: "羊坊 6", src: "/imageAssets/gallery/yangfang6.png" },
+  { description: "羊坊 7", src: "/imageAssets/gallery/yangfang7.png" },
+  { description: "羊坊 8", src: "/imageAssets/gallery/yangfang8.png" },
+];
+
+const toWebp = (url: string) => {
+  if (import.meta.env.DEV) return url;
+  return url.replace(/\.(png|jpe?g)$/i, ".webp");
+};
+
+export const Gallery = () => {
   const [showModal, setShowModal] = React.useState<boolean>(false);
   const [selectedImageIndex, setSelectedImageIndex] = React.useState<number>(0);
-
-  const toWebp = (url: string) => {
-    if (import.meta.env.DEV) return url;
-    return url.replace(/\.(png|jpe?g)$/i, ".webp");
-  };
 
   const openImage = (index: number) => {
     setSelectedImageIndex(index);

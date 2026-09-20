@@ -4,12 +4,5 @@ export const ROUTES = {
   DYNMAP: "/dynmap",
   GALLERY: "/gallery",
   VIDEOS: "/videos",
-  SERVICE: "/"
-};
-
-export enum WIKI_ITEM_TYPES {
-  TITLE,
-  IMAGE,
-  TEXT,
-  DEVIDER,
-}
+  SERVICE: "/",
+} as const;

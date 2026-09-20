@@ -30,6 +30,6 @@ $mobile-vertical-margin: 2rem;
 
 $qhd-width: 1920px;
 $adaptive-side-spacing: max(
-  calc(calc(100% - $qhd-width) / 2),
+  calc((100% - $qhd-width) / 2),
   #{$desktop-horizontal-margin}
 );

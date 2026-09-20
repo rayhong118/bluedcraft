@@ -1,12 +1,7 @@
-import { useEffect, useState } from "react";
 import "./footer.scss";
 
 function FooterComponent() {
-  const [currentYear, setCurrentYear] = useState<string>();
-  useEffect(() => {
-    let time = new Date();
-    setCurrentYear(time.getFullYear().toString());
-  }, []);
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer>
