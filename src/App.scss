@@ -1,6 +1,6 @@
-@use './shared/constants/constants.scss';
-@use './shared/styleSheets/anchor.scss';
-@use './shared/styleSheets/button.scss';
+@use "./shared/constants/constants.scss";
+@use "./shared/styleSheets/anchor.scss";
+@use "./shared/styleSheets/button.scss";
 
 body {
   height: auto !important;
@@ -36,7 +36,7 @@ body {
   padding-bottom: 4rem;
 }
 
-.adaptive-margin{
+.adaptive-margin {
   margin: 1rem constants.$mobile-horizontal-margin;
 }
 
@@ -55,13 +55,13 @@ body {
 
 // Mobile version stylesheet ends.
 
-// Regular version stylesheet starts. 
+// Regular version stylesheet starts.
 
-@media (min-width: constants.$mobile-desktop-breakpoint) {
+@media (min-width: constants.$mobile-navbar-breakpoint) {
   .page {
     padding-top: 2rem;
   }
-  .adaptive-margin{
+  .adaptive-margin {
     margin-left: constants.$adaptive-side-spacing;
     margin-right: constants.$adaptive-side-spacing;
   }

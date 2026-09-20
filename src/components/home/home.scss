@@ -92,12 +92,22 @@
     .feature {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       border: 1px solid constants.$theme-gradient-1;
+      padding: 1.5rem;
+    }
+
+    picture {
+      display: flex;
+      justify-content: center;
     }
 
     img {
       box-sizing: content-box;
       image-rendering: pixelated !important;
+      width: 96px;
+      height: 96px;
     }
 
     .title, .subtitle{

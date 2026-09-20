@@ -1,4 +1,4 @@
-@use '../../constants/constants.scss';
+@use "../../constants/constants.scss";
 
 // mobile view
 .nav-component {
@@ -13,7 +13,7 @@
 }
 
 // desktop version
-@media (min-width: constants.$mobile-desktop-breakpoint) {
+@media (min-width: constants.$mobile-navbar-breakpoint) {
   .nav-component {
     display: flex;
     flex-direction: row;

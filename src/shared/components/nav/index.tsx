@@ -8,6 +8,19 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 
 import "./nav.scss";
 
+// Shared sx for all nav buttons — hover uses $theme-color (#3390ff) text + $light-gray (#e4f0ff) bg
+const navBtnSx = {
+  textTransform: "none",
+  color: "#333",
+  py: 1,
+  borderRadius: 1.5,
+  transition: "color 0.2s, background-color 0.2s",
+  "&:hover": {
+    color: "#3390ff",
+    backgroundColor: "#e4f0ff",
+  },
+} as const;
+
 const NavComponent = () => {
   const navigate = useNavigate();
 
@@ -20,9 +33,8 @@ const NavComponent = () => {
           navigate("/");
         }}
         sx={{
-          textTransform: "none",
+          ...navBtnSx,
           fontWeight: 600,
-          color: "#333",
           py: 1.5,
           px: 2,
           fontSize: "1rem",
@@ -37,7 +49,7 @@ const NavComponent = () => {
         onClick={() => {
           navigate("/");
         }}
-        sx={{ textTransform: "none", color: "#333", py: 1 }}
+        sx={navBtnSx}
       >
         梦の世界
       </Button>
@@ -47,7 +59,7 @@ const NavComponent = () => {
         onClick={() => {
           navigate(ROUTES.WIKI);
         }}
-        sx={{ textTransform: "none", color: "#333", py: 1 }}
+        sx={navBtnSx}
       >
         百科
       </Button>
@@ -57,7 +69,7 @@ const NavComponent = () => {
         onClick={() => {
           navigate(ROUTES.GALLERY);
         }}
-        sx={{ textTransform: "none", color: "#333", py: 1 }}
+        sx={navBtnSx}
       >
         相册
       </Button>
@@ -67,7 +79,7 @@ const NavComponent = () => {
         onClick={() => {
           navigate(ROUTES.VIDEOS);
         }}
-        sx={{ textTransform: "none", color: "#333", py: 1 }}
+        sx={navBtnSx}
       >
         视频
       </Button>
