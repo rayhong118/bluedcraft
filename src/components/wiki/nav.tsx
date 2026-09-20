@@ -85,6 +85,57 @@ export const WikiNav = () => {
         sx={{ mb: 2 }}
       />
       <List component="nav" dense disablePadding>
+        {!searchTerm && (
+          <ListItemButton
+            selected={selectedArticleId === ""}
+            onClick={(e) => {
+              e.preventDefault();
+              setSelectedArticleId("");
+            }}
+            sx={{
+              borderRadius: 1,
+              py: 0.75,
+              px: 1.5,
+              mb: 1,
+              transition: "background-color 0.15s ease, color 0.15s ease",
+              "&:hover": {
+                backgroundColor: "#e4f0ff",
+                "& .MuiListItemText-primary": {
+                  color: "#3390ff",
+                },
+              },
+              "&.Mui-selected": {
+                backgroundColor: "rgba(0, 114, 220, 0.12)",
+                fontWeight: 600,
+                "& .MuiListItemText-primary": {
+                  color: "#0055bb",
+                },
+                "&:hover": {
+                  backgroundColor: "rgba(0, 114, 220, 0.18)",
+                },
+              },
+            }}
+          >
+            <ListItemText
+              primary="全部文章目录"
+              slotProps={{
+                primary: {
+                  sx: {
+                    fontSize: "0.92rem",
+                    fontWeight: selectedArticleId === "" ? 600 : 500,
+                    color: selectedArticleId === "" ? "#0055bb" : "text.primary",
+                    transition: "color 0.15s ease",
+                  },
+                },
+              }}
+            />
+          </ListItemButton>
+        )}
+        {searchTerm && linkGroups[0]?.links.length === 0 && (
+          <Box sx={{ px: 1.5, py: 2, color: "text.secondary", fontSize: "0.85rem" }}>
+            未找到相关文章
+          </Box>
+        )}
         {linkGroups.map((group, groupIdx) => (
           <Box key={`group-${groupIdx}`} sx={{ mb: 1.5 }}>
             {group.name && (
@@ -102,37 +153,56 @@ export const WikiNav = () => {
                 {group.name}
               </ListSubheader>
             )}
-            {group.links.map((link) => (
-              <ListItemButton
-                key={link.key}
-                selected={selectedArticleId === link.url}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setSelectedArticleId(link.url);
-                }}
-                sx={{
-                  borderRadius: 1,
-                  py: 0.5,
-                  px: 1.5,
-                  "&.Mui-selected": {
-                    backgroundColor: "rgba(0, 114, 220, 0.12)",
-                    fontWeight: 600,
-                  },
-                }}
-              >
-                <ListItemText
-                  primary={link.name}
-                  slotProps={{
-                    primary: {
-                      sx: {
-                        fontSize: "0.9rem",
-                        color: selectedArticleId === link.url ? "#0055bb" : "text.primary",
+            {group.links.map((link) => {
+              const isSelected = selectedArticleId === link.url;
+              return (
+                <ListItemButton
+                  key={link.key}
+                  selected={isSelected}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setSelectedArticleId(link.url);
+                  }}
+                  sx={{
+                    borderRadius: 1,
+                    py: 0.5,
+                    px: 1.5,
+                    transition: "background-color 0.15s ease, color 0.15s ease",
+                    "&:hover": {
+                      backgroundColor: "#e4f0ff",
+                      "& .MuiListItemText-primary": {
+                        color: "#3390ff",
+                      },
+                    },
+                    "&.Mui-selected": {
+                      backgroundColor: "rgba(0, 114, 220, 0.12)",
+                      fontWeight: 600,
+                      "& .MuiListItemText-primary": {
+                        color: "#0055bb",
+                        fontWeight: 600,
+                      },
+                      "&:hover": {
+                        backgroundColor: "rgba(0, 114, 220, 0.18)",
                       },
                     },
                   }}
-                />
-              </ListItemButton>
-            ))}
+                >
+                  <ListItemText
+                    primary={link.name}
+                    slotProps={{
+                      primary: {
+                        sx: {
+                          fontSize: "0.9rem",
+                          color: isSelected ? "#0055bb" : "text.primary",
+                          fontWeight: isSelected ? 600 : 400,
+                          transition: "color 0.15s ease",
+                        },
+                      },
+                    }}
+                  />
+                </ListItemButton>
+              );
+            })}
           </Box>
         ))}
       </List>

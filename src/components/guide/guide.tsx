@@ -4,8 +4,9 @@ import { ROUTES } from "../../shared/constants/constants.js";
 export const Guide = () => {
   return (
     <div id="guide">
+      <h2 className="page-title">Guide 指南</h2>
       <div id="guide1">
-        <h1>如果你还没加入本服务器：</h1>
+        <h3>如果你还没加入本服务器：</h3>
         <div>
           <input type="checkbox" />
           加入审核群(336752653)，阅读群公告
@@ -29,7 +30,7 @@ export const Guide = () => {
         <b>*请勿将自己账号信息公开在群内</b>
       </div>
       <div id="guide2">
-        <h1>如果你已经通过审核：</h1>
+        <h3>如果你已经通过审核：</h3>
 
         <div>
           <input type="checkbox" />

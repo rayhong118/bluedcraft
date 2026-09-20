@@ -2,17 +2,14 @@
 
 /* ── Page header ── */
 .gallery-header {
-  padding: 0 constants.$mobile-horizontal-margin;
+  margin-bottom: 1.25rem;
 
-  h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 0.83em 0 0.3em;
-    color: inherit;
+  .page-title {
+    margin-bottom: 0.25rem;
   }
 
   .gallery-subtitle {
-    margin: 0 0 1rem;
+    margin: 0;
     color: constants.$gray;
     font-size: 0.9rem;
   }
@@ -23,7 +20,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
-  padding: 0 constants.$mobile-horizontal-margin 2rem;
+  padding: 0 0 2rem;
 
   /* ── Individual tile ── */
   .image-preview-wrap {
@@ -95,14 +92,10 @@
 
 /* ── Very narrow screens (mobile phones) ── */
 @media (max-width: constants.$mobile-navbar-breakpoint) {
-  .gallery-header {
-    padding: 0 1rem;
-  }
-
   .image-list {
     grid-template-columns: 1fr;
     gap: 0.85rem;
-    padding: 0 1rem 2rem;
+    padding: 0 0 2rem;
 
     .image-preview-wrap {
       border-radius: 8px;

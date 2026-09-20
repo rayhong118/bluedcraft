@@ -7,7 +7,7 @@ const GuideComponent = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="page">
+    <div className="page adaptive-margin">
       <Guide />
     </div>
   );

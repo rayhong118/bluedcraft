@@ -1,4 +1,4 @@
-@use '../../shared/constants/constants.scss';
+@use "../../shared/constants/constants.scss";
 
 // mobile
 .wiki-page {
@@ -54,14 +54,13 @@
   width: 348px;
   height: 176px;
 
-
-  $count : 0;
+  $count: 0;
   @for $y from 1 through 3 {
     @for $x from 1 through 3 {
-      $count : $count + 1;
+      $count: $count + 1;
       .item-#{$count} {
         position: absolute;
-        top:  $y * 35px;
+        top: $y * 35px;
         left: 25px + $x * 36px;
         width: 32px;
         height: 32px;
@@ -88,11 +87,20 @@
   .link-to-article {
     color: constants.$theme-shade-1;
     border-bottom: 1px solid constants.$theme-gradient-1;
+    text-decoration: none;
+    transition: color 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+      color: constants.$theme-color;
+      border-bottom-color: constants.$theme-color;
+    }
   }
 }
 
-@media (min-width: constants.$mobile-desktop-breakpoint) {
-  .nav-panel-button{ display: none;}
+@media (min-width: constants.$mobile-navbar-breakpoint) {
+  .nav-panel-button {
+    display: none !important;
+  }
   .wiki-page {
     display: flex;
     gap: 2rem;
@@ -100,11 +108,12 @@
     .wiki-nav {
       display: block;
     }
-    .nav-panel {display: none;}
+    .nav-panel {
+      display: none;
+    }
   }
 
   .wiki-container {
-    
     .wiki-search {
       padding: 1rem 0;
       display: block;
@@ -130,15 +139,97 @@
     flex-wrap: wrap;
     gap: 2rem;
     margin-bottom: 2rem;
-
-    .link-to-article {
-      border-bottom: 1px solid constants.$theme-gradient-1;
-    }
   }
 }
 
 /* custom recipe page */
 .custom-recipe {
-  .output {display: flex; flex-direction: column; justify-content: space-evenly;}
-  .input{ display: flex;}
+  .output {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .input {
+    display: flex;
+  }
+}
+
+/* ── Wiki Article Markdown Body ── */
+.wiki-markdown-body {
+  line-height: 1.7;
+  color: #2c3e50;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: constants.$dark-gray;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    border-bottom: 1px solid #e4f0ff;
+    padding-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  p {
+    margin: 0.5rem 0 1rem;
+  }
+
+  code {
+    background: #f4f9ff;
+    border: 1px solid #e0ecfb;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+  }
+
+  pre {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+
+    code {
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background: #f4f9ff;
+      font-weight: 600;
+    }
+  }
+
+  ul, ol {
+    padding-left: 1.5rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  li {
+    margin-bottom: 0.25rem;
+  }
 }

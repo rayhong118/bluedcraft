@@ -17,7 +17,6 @@ const navBtnSx = {
   transition: "color 0.2s, background-color 0.2s",
   "&:hover": {
     color: "#3390ff",
-    backgroundColor: "#e4f0ff",
   },
 } as const;
 
@@ -88,4 +87,3 @@ const NavComponent = () => {
 };
 
 export default NavComponent;
-

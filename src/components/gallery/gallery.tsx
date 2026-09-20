@@ -110,7 +110,7 @@ export const Gallery = () => {
     <>
       {/* Page header */}
       <div className="gallery-header">
-        <h2>Gallery 相册</h2>
+        <h2 className="page-title">Gallery 相册</h2>
         <p className="gallery-subtitle">共 {imageList.length} 张图片</p>
       </div>
 

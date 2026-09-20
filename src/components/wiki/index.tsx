@@ -24,12 +24,16 @@ const WikiComponent = () => {
   return (
     <WikiContext.Provider value={{ selectedArticleId, setSelectedArticleId }}>
       <div className="page adaptive-margin">
-        <h2>Wiki 百科</h2>
+        <h2 className="page-title">Wiki 百科</h2>
         <Button
           variant="outlined"
           className="nav-panel-button"
           onClick={() => setIsOpen(true)}
-          sx={{ mb: 2, textTransform: "none" }}
+          sx={{
+            display: { xs: "inline-flex", sm: "none" },
+            mb: 2,
+            textTransform: "none",
+          }}
         >
           目录
         </Button>

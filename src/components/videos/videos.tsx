@@ -32,7 +32,7 @@ export const Videos = () => {
   ];
   return (
     <div>
-      <h2>Videos 视频</h2>
+      <h2 className="page-title">Videos 视频</h2>
 
       <div className="videos-list">
         {videosList.map((video, index) => {

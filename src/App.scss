@@ -40,6 +40,20 @@ body {
   margin: 1rem constants.$mobile-horizontal-margin;
 }
 
+@media (max-width: 540px) {
+  .adaptive-margin {
+    margin: 0.75rem 1rem;
+  }
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1.25rem;
+  color: constants.$dark-gray;
+  line-height: 1.25;
+}
+
 #topNav {
   display: none;
 }
@@ -64,6 +78,10 @@ body {
   .adaptive-margin {
     margin-left: constants.$adaptive-side-spacing;
     margin-right: constants.$adaptive-side-spacing;
+  }
+  .page-title {
+    font-size: 1.75rem;
+    margin: 0.5rem 0 1.5rem;
   }
   #topNav {
     z-index: 10;
